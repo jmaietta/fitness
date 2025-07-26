@@ -161,21 +161,6 @@ li:hover {
     margin: 0 0 10px;
 }
 
-.video-link {
-    display: inline-block;
-    background-color: #2193b0;
-    color: #ffffff;
-    padding: 8px 15px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.video-link:hover {
-    background-color: #1c7a93;
-}
-
 /* --- Mobile Optimization --- */
 @media (max-width: 600px) {
     body {
