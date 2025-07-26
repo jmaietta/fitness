@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forge</title>
+    <title>Fitness Tracker</title>
     <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -13,13 +15,13 @@
 </head>
 <body>
     <div class="app-container">
-        <img src="forge-logo.png" alt="Forge Logo" class="app-logo">
+        <img src="forge-logo.png" alt="Forge Fitness Tracker Logo" class="app-logo">
         <div id="quote-box" class="quote-box"></div>
 
         <div class="tabs">
-            <button class="tab-button active" data-target="stretching">Stretching</button>
-            <button class="tab-button" data-target="cardio">Cardio</button>
-            <button class="tab-button" data-target="resistance">Resistance</button>
+            <button class="tab-button active" data-target="stretching"><i class="fa-solid fa-person-stretching"></i> Stretching</button>
+            <button class="tab-button" data-target="cardio"><i class="fa-solid fa-person-running"></i> Cardio</button>
+            <button class="tab-button" data-target="resistance"><i class="fa-solid fa-dumbbell"></i> Resistance</button>
         </div>
 
         <div id="stretching" class="tab-content active">
