@@ -18,15 +18,11 @@ body {
     padding: 0;
 }
 
-/* Emoji Title Styling */
-.emoji-title {
-    text-align: center;
-    font-size: 48px;
-    margin-bottom: 30px;
-}
-
-.emoji-title span {
-    margin: 0 4px;
+/* Logo Styling */
+.app-logo {
+    display: block;
+    max-width: 250px;
+    margin: 0 auto 30px auto;
 }
 
 /* Section Headings */
@@ -194,8 +190,9 @@ li:hover {
         padding: 10px;
     }
     
-    .emoji-title {
-        font-size: 36px;
+    .app-logo {
+        max-width: 200px;
+        margin-bottom: 25px;
     }
 
     .quote-box {
