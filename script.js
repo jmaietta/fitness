@@ -19,13 +19,13 @@ function initTabs() {
     tabButtons.forEach(btn => {
         btn.addEventListener('click', function () {
             tabButtons.forEach(b => b.classList.remove('active'));
-            tabContents.forEach(content => content.classList.remove('active'));
+            tabContents.forEach(content => content.style.display = 'none');
 
             this.classList.add('active');
             const targetId = this.getAttribute('data-target');
             const targetPanel = document.getElementById(targetId);
             if (targetPanel) {
-                targetPanel.classList.add('active');
+                targetPanel.style.display = 'block';
             }
         });
     });
@@ -73,11 +73,12 @@ function initExpandableItems() {
             if (detailsElement) {
                 // Toggle a class on the header for CSS to handle the icon rotation
                 header.classList.toggle('expanded');
-
-                // Animate the expansion
+                
+                // Animate the expansion using max-height for a smooth accordion effect
                 if (detailsElement.style.maxHeight) {
                     detailsElement.style.maxHeight = null;
                 } else {
+                    detailsElement.style.display = 'block'; // Make it block before calculating scrollHeight
                     detailsElement.style.maxHeight = detailsElement.scrollHeight + "px";
                 }
             }
