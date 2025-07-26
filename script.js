@@ -43,6 +43,13 @@ function displayDailyQuote() {
         'Don\'t limit your challenges, challenge your limits.',
         'Strength doesn\'t come from what you can do. It comes from overcoming the things you once thought you couldn\'t.',
         'Your body can stand almost anything. It\'s your mind that you have to convince.',
+        'Do something today that your future self will thank you for.',
+        'The real workout starts when you want to stop.',
+        'Motivation is what gets you started. Habit is what keeps you going.',
+        'The pain you feel today will be the strength you feel tomorrow.',
+        'If it doesn\'t challenge you, it won\'t change you.',
+        'You are your only limit.',
+        'Be stronger than your excuses.'
     ];
 
     const quoteBox = document.getElementById('quote-box');
