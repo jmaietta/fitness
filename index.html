@@ -1,67 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness Tracker</title>
+    <title>Forge</title>
     <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
-    
 </head>
-    
 <body>
     <div class="app-container">
-        <h1>Fitness Tracker</h1>
+        
+        <img src="forge-logo.png" alt="Forge Logo" class="app-logo">
+
         <div id="quote-box" class="quote-box"></div>
 
         <div class="tabs">
-            <button class="tab-button active" data-target="stretching">Stretching</button>
-            <button class="tab-button" data-target="cardio">Cardio</button>
-            <button class="tab-button" data-target="resistance">Resistance</button>
+            <button class="tab-button active" data-target="stretching"><i class="fa-solid fa-child-reaching"></i> Stretching</button>
+            <button class="tab-button" data-target="cardio"><i class="fa-solid fa-person-running"></i> Cardio</button>
+            <button class="tab-button" data-target="resistance"><i class="fa-solid fa-dumbbell"></i> Resistance</button>
         </div>
 
         <div id="stretching" class="tab-content active">
             <h2>Stretching Routine</h2>
             <ul>
-                <li><label><input type="checkbox" data-exercise="Neck Stretch"> Neck Stretch (2 sets of 15-second hold)</label></li>
-                <li><label><input type="checkbox" data-exercise="Shoulder Stretch"> Shoulder Stretch (2 sets of 15-second hold per side)</label></li>
-                <li><label><input type="checkbox" data-exercise="Hamstring Stretch"> Hamstring Stretch (2 sets of 30-second hold per leg)</label></li>
-                <li><label><input type="checkbox" data-exercise="Quad Stretch"> Quad Stretch (2 sets of 30-second hold per leg)</label></li>
-                <li><label><input type="checkbox" data-exercise="Calf Stretch"> Calf Stretch (2 sets of 30-second hold per leg)</label></li>
+                <li>
+                    <div class="exercise-header">
+                        <span class="exercise-name">Neck Stretch (2 sets of 15-second hold)</span>
+                        <span class="expand-icon">></span>
+                    </div>
+                    <div class="details">
+                        <p>Gently tilt your head, bringing your ear toward your shoulder until you feel a light stretch.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="exercise-header">
+                        <span class="exercise-name">Shoulder Stretch (2 sets of 15-second hold per side)</span>
+                        <span class="expand-icon">></span>
+                    </div>
+                    <div class="details">
+                        <p>Cross one arm over your chest and use the other arm to gently pull it closer to your body.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="exercise-header">
+                        <span class="exercise-name">Hamstring Stretch (2 sets of 30-second hold per leg)</span>
+                        <span class="expand-icon">></span>
+                    </div>
+                    <div class="details">
+                        <p>Sit on the floor with one leg extended, the other bent. Lean forward over the straight leg.</p>
+                    </div>
+                </li>
+                 <li>
+                    <div class="exercise-header">
+                        <span class="exercise-name">Quad Stretch (2 sets of 30-second hold per leg)</span>
+                        <span class="expand-icon">></span>
+                    </div>
+                    <div class="details">
+                        <p>While standing, hold onto a support, grab your ankle and gently pull your heel towards your glute.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="exercise-header">
+                        <span class="exercise-name">Calf Stretch (2 sets of 30-second hold per leg)</span>
+                        <span class="expand-icon">></span>
+                    </div>
+                    <div class="details">
+                        <p>Stand facing a wall with one foot forward. Lean into the wall, keeping your back leg straight.</p>
+                    </div>
+                </li>
             </ul>
         </div>
 
         <div id="cardio" class="tab-content">
             <h2>Cardio Routine</h2>
             <ul>
-                <li><label><input type="checkbox" data-exercise="Jumping Jacks"> Jumping Jacks (3 sets of 30 seconds)</label></li>
-                <li><label><input type="checkbox" data-exercise="Burpees"> Burpees (3 sets of 10 reps)</label></li>
-                <li><label><input type="checkbox" data-exercise="High Knees"> High Knees (3 sets of 30 seconds)</label></li>
-                <li><label><input type="checkbox" data-exercise="Mountain Climbers"> Mountain Climbers (3 sets of 30 seconds)</label></li>
+                <li>
+                    <div class="exercise-header">
+                        <span class="exercise-name">Jumping Jacks (3 sets of 30 seconds)</span>
+                        <span class="expand-icon">></span>
+                    </div>
+                    <div class="details">
+                        <p>A full-body exercise. Jump while spreading your legs and bringing your arms overhead.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="exercise-header">
+                        <span class="exercise-name">Burpees (3 sets of 10 reps)</span>
+                        <span class="expand-icon">></span>
+                    </div>
+                    <div class="details">
+                        <p>A challenging full-body move: squat, kick legs back to a plank, return to squat, and jump up.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="exercise-header">
+                        <span class="exercise-name">High Knees (3 sets of 30 seconds)</span>
+                        <span class="expand-icon">></span>
+                    </div>
+                    <div class="details">
+                        <p>Run in place, bringing your knees up towards your chest as high as possible.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="exercise-header">
+                        <span class="exercise-name">Mountain Climbers (3 sets of 30 seconds)</span>
+                        <span class="expand-icon">></span>
+                    </div>
+                    <div class="details">
+                        <p>From a plank position, alternate bringing each knee towards your chest, as if running.</p>
+                    </div>
+                </li>
             </ul>
         </div>
 
         <div id="resistance" class="tab-content">
             <h2>Resistance Routine</h2>
             <ul>
-                <li><label><input type="checkbox" data-exercise="Push-ups"> Push-ups (3 sets of 10 reps)</label></li>
-                <li><label><input type="checkbox" data-exercise="Squats"> Squats (3 sets of 15 reps)</label></li>
-                <li><label><input type="checkbox" data-exercise="Lunges"> Lunges (3 sets of 10 reps each leg)</label></li>
-                <li><label><input type="checkbox" data-exercise="Plank"> Plank (3 sets of 30-second hold)</label></li>
-                <li><label><input type="checkbox" data-exercise="Bicep Curls"> Bicep Curls (with band) (3 sets of 12 reps)</label></li>
-                <li><label><input type="checkbox" data-exercise="Glute Bridges"> Glute Bridges (3 sets of 15 reps)</label></li>
-                <li><label><input type="checkbox" data-exercise="Chair Dips"> Chair Dips (3 sets of 12 reps)</label></li>
-                <li><label><input type="checkbox" data-exercise="Calf Raises"> Calf Raises (3 sets of 20 reps)</label></li>
-                <li><label><input type="checkbox" data-exercise="Supermans"> Supermans (3 sets of 12 reps)</label></li>
+                <li>
+                    <div class="exercise-header">
+                        <span class="exercise-name">Push-ups (3 sets of 10 reps)</span>
+                        <span class="expand-icon">></span>
+                    </div>
+                    <div class="details">
+                        <p>Lower your body until your chest nearly touches the floor, keeping your back straight.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="exercise-header">
+                        <span class="exercise-name">Squats (3 sets of 15 reps)</span>
+                        <span class="expand-icon">></span>
+                    </div>
+                    <div class="details">
+                        <p>Lower your hips as if sitting in a chair, keeping your chest up and back straight.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="exercise-header">
+                        <span class="exercise-name">Lunges (3 sets of 10 reps each leg)</span>
+                        <span class="expand-icon">></span>
+                    </div>
+                    <div class="details">
+                        <p>Step forward with one leg and lower your hips until both knees are bent at a 90-degree angle.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="exercise-header">
+                        <span class="exercise-name">Plank (3 sets of 30-second hold)</span>
+                        <span class="expand-icon">></span>
+                    </div>
+                    <div class="details">
+                        <p>Hold a push-up position, keeping your body in a straight line from head to heels.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="exercise-header">
+                        <span class="exercise-name">Glute Bridges (3 sets of 15 reps)</span>
+                        <span class="expand-icon">></span>
+                    </div>
+                    <div class="details">
+                        <p>Lie on your back, lift your hips off the floor until your body forms a straight line.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="exercise-header">
+                        <span class="exercise-name">Chair Dips (3 sets of 12 reps)</span>
+                        <span class="expand-icon">></span>
+                    </div>
+                    <div class="details">
+                        <p>Using a sturdy chair, lower your body down with your arms until your elbows are at 90 degrees.</p>
+                    </div>
+                </li>
+                 <li>
+                    <div class="exercise-header">
+                        <span class="exercise-name">Calf Raises (3 sets of 20 reps)</span>
+                        <span class="expand-icon">></span>
+                    </div>
+                    <div class="details">
+                        <p>Stand with feet flat on the floor, then push through the balls of your feet to raise your heels.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="exercise-header">
+                        <span class="exercise-name">Supermans (3 sets of 12 reps)</span>
+                        <span class="expand-icon">></span>
+                    </div>
+                    <div class="details">
+                        <p>Lie on your stomach and simultaneously lift your arms, legs, and chest off the floor.</p>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
