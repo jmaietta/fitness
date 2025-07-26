@@ -45,7 +45,6 @@ h2 {
     background: linear-gradient(135deg, #6dd5ed, #2193b0);
     border-radius: 12px;
     font-size: 18px;
-    font-style: italic;
     font-weight: 700;
     color: #ffffff;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -80,16 +79,9 @@ h2 {
 /* Add margin to the right of tab icons */
 .tab-button i {
     margin-right: 8px;
-}
-
-/* Styling for the custom image icon */
-.tab-icon-custom {
-    height: 1.1em;
-    width: auto;
-    margin-right: 8px;
     vertical-align: middle;
     position: relative;
-    top: -2px;
+    top: -1px;
 }
 
 .tab-button.active {
