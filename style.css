@@ -79,8 +79,12 @@ ul {
 
 li {
     margin-bottom: 10px;
-    font-size: 16px;
     padding: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+li:last-child {
+    border-bottom: none;
 }
 
 label {
@@ -91,14 +95,31 @@ label {
 
 input[type="checkbox"] {
     margin-right: 10px;
-    min-width: 18px;  /* For better touch targets */
-    min-height: 18px; /* For better touch targets */
+    min-width: 18px;
+    min-height: 18px;
 }
 
 /* Style for completed exercises */
-label.completed {
+label.completed .exercise-name {
     color: #888;
     text-decoration: line-through;
+}
+
+/* Styles for expandable details */
+.exercise-name {
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+.details {
+    display: none; /* Hidden by default */
+    padding: 10px 5px 10px 28px; /* Aligns with text after checkbox */
+    font-size: 14px;
+    color: #555;
+}
+
+.details p {
+    margin: 0 0 8px 0;
 }
 
 
