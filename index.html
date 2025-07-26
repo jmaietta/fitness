@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Routine Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <h1>Fitness Routine Tracker</h1>
+        <div id="quote-box" class="quote-box"></div>
+
+        <div class="tabs">
+            <button class="tab-button active" data-target="stretching">Stretching</button>
+            <button class="tab-button" data-target="cardio">Cardio</button>
+            <button class="tab-button" data-target="resistance">Resistance</button>
+        </div>
+
+        <div id="stretching" class="tab-content active">
+            <h2>Stretching Routine</h2>
+            <ul>
+                <li><label><input type="checkbox" data-exercise="Neck Stretch"> Neck Stretch (2 sets of 15-second hold)</label></li>
+                <li><label><input type="checkbox" data-exercise="Shoulder Stretch"> Shoulder Stretch (2 sets of 15-second hold per side)</label></li>
+                <li><label><input type="checkbox" data-exercise="Hamstring Stretch"> Hamstring Stretch (2 sets of 30-second hold per leg)</label></li>
+                <li><label><input type="checkbox" data-exercise="Quad Stretch"> Quad Stretch (2 sets of 30-second hold per leg)</label></li>
+                <li><label><input type="checkbox" data-exercise="Calf Stretch"> Calf Stretch (2 sets of 30-second hold per leg)</label></li>
+            </ul>
+        </div>
+
+        <div id="cardio" class="tab-content">
+            <h2>Cardio Routine</h2>
+            <ul>
+                <li><label><input type="checkbox" data-exercise="Jumping Jacks"> Jumping Jacks (3 sets of 30 seconds)</label></li>
+                <li><label><input type="checkbox" data-exercise="Burpees"> Burpees (3 sets of 10 reps)</label></li>
+                <li><label><input type="checkbox" data-exercise="High Knees"> High Knees (3 sets of 30 seconds)</label></li>
+                <li><label><input type="checkbox" data-exercise="Mountain Climbers"> Mountain Climbers (3 sets of 30 seconds)</label></li>
+            </ul>
+        </div>
+
+        <div id="resistance" class="tab-content">
+            <h2>Resistance Routine</h2>
+            <ul>
+                <li><label><input type="checkbox" data-exercise="Push-ups"> Push-ups (3 sets of 10 reps)</label></li>
+                <li><label><input type="checkbox" data-exercise="Squats"> Squats (3 sets of 15 reps)</label></li>
+                <li><label><input type="checkbox" data-exercise="Lunges"> Lunges (3 sets of 10 reps each leg)</label></li>
+                <li><label><input type="checkbox" data-exercise="Plank"> Plank (3 sets of 30-second hold)</label></li>
+                <li><label><input type="checkbox" data-exercise="Bicep Curls"> Bicep Curls (with band) (3 sets of 12 reps)</label></li>
+                <li><label><input type="checkbox" data-exercise="Glute Bridges"> Glute Bridges (3 sets of 15 reps)</label></li>
+                <li><label><input type="checkbox" data-exercise="Chair Dips"> Chair Dips (3 sets of 12 reps)</label></li>
+                <li><label><input type="checkbox" data-exercise="Calf Raises"> Calf Raises (3 sets of 20 reps)</label></li>
+                <li><label><input type="checkbox" data-exercise="Supermans"> Supermans (3 sets of 12 reps)</label></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
