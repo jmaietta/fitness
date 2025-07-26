@@ -77,6 +77,11 @@ h2 {
     transition: all 0.3s ease;
 }
 
+/* Add margin to the right of tab icons */
+.tab-button i {
+    margin-right: 8px;
+}
+
 .tab-button.active {
     color: #2193b0;
     background-color: #f8f9fa;
