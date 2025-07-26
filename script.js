@@ -3,8 +3,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Initialize tab switching
     initTabs();
-    // Initialize checkbox persistence and visual cues
-    initCheckboxes();
     // Show a motivational quote once per 24 hours
     displayDailyQuote();
     // Initialize expandable exercise details
@@ -29,28 +27,6 @@ function initTabs() {
             if (targetPanel) {
                 targetPanel.classList.add('active');
             }
-        });
-    });
-}
-
-/**
- * Persists checkbox state using localStorage and toggles a 'completed' class for visual feedback.
- */
-function initCheckboxes() {
-    const checkboxes = document.querySelectorAll('input[type="checkbox"][data-exercise]');
-    checkboxes.forEach(box => {
-        const exerciseName = box.getAttribute('data-exercise');
-        const label = box.parentElement;
-
-        const stored = localStorage.getItem('exercise_' + exerciseName);
-        if (stored === 'true') {
-            box.checked = true;
-            label.classList.add('completed');
-        }
-
-        box.addEventListener('change', function () {
-            localStorage.setItem('exercise_' + exerciseName, this.checked);
-            label.classList.toggle('completed', this.checked);
         });
     });
 }
@@ -86,15 +62,21 @@ function displayDailyQuote() {
 }
 
 /**
- * Sets up click handlers for exercise names to toggle the visibility of the details section.
+ * Sets up click handlers for exercise headers to toggle the visibility of the details section.
  */
 function initExpandableItems() {
-    document.querySelectorAll('.exercise-name').forEach(nameElement => {
-        nameElement.addEventListener('click', () => {
-            const detailsElement = nameElement.closest('li').querySelector('.details');
+    document.querySelectorAll('.exercise-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const detailsElement = header.nextElementSibling;
+            const iconElement = header.querySelector('.expand-icon');
+
             if (detailsElement) {
                 const isVisible = detailsElement.style.display === 'block';
                 detailsElement.style.display = isVisible ? 'none' : 'block';
+                // Toggle the icon
+                if (iconElement) {
+                    iconElement.textContent = isVisible ? '+' : '−';
+                }
             }
         });
     });
