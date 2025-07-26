@@ -46,6 +46,7 @@ h2 {
     border-radius: 12px;
     font-size: 18px;
     font-style: italic;
+    font-weight: 700;
     color: #ffffff;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     display: none; /* Initially hidden */
@@ -134,7 +135,7 @@ li:hover {
 }
 
 .details {
-    padding: 0 20px 20px 20px;
+    padding: 0 20px 15px 20px;
     font-size: 15px;
     color: #555;
     border-top: 1px solid #f0f0f0;
@@ -143,7 +144,7 @@ li:hover {
     transition: max-height 0.3s ease-out;
 }
 
-.details p { margin: 15px 0; }
+.details p { margin: 10px 0; }
 
 .video-link {
     display: inline-block;
