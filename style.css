@@ -1,3 +1,4 @@
+
 /* Import Google Fonts at the top of the file */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;700&display=swap');
 
@@ -45,7 +46,7 @@ h2 {
     background: linear-gradient(135deg, #6dd5ed, #2193b0);
     border-radius: 12px;
     font-size: 18px;
-    font-style: italic;
+    font-weight: 700;
     color: #ffffff;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     display: none; /* Initially hidden */
@@ -74,6 +75,14 @@ h2 {
     color: #86909a;
     outline: none;
     transition: all 0.3s ease;
+}
+
+/* Add margin to the right of tab icons */
+.tab-button i {
+    margin-right: 8px;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
 }
 
 .tab-button.active {
@@ -134,29 +143,23 @@ li:hover {
 }
 
 .details {
-    padding: 0 20px 20px 20px;
+    padding: 0 20px;
     font-size: 15px;
     color: #555;
     border-top: 1px solid #f0f0f0;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
 }
 
-.details p { margin: 15px 0; }
-
-.video-link {
-    display: inline-block;
-    background-color: #2193b0;
-    color: #ffffff;
-    padding: 8px 15px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+/* New rule to add padding only when expanded */
+.exercise-header.expanded + .details {
+    padding-top: 10px;
+    padding-bottom: 15px;
 }
-.video-link:hover {
-    background-color: #1c7a93;
+
+.details p {
+    margin: 0 0 10px;
 }
 
 /* --- Mobile Optimization --- */
@@ -171,6 +174,7 @@ li:hover {
     }
 
     .quote-box {
+        padding: 20px 25px;
         font-size: 16px;
     }
 
