@@ -36,11 +36,11 @@ function initTabs() {
  */
 function displayDailyQuote() {
     const quotes = [
+        'Success doesn\'t come from what you do occasionally. It comes from what you do consistently.',
         'The only bad workout is the one that didn\'t happen.',
         'Don\'t limit your challenges, challenge your limits.',
         'Strength doesn\'t come from what you can do. It comes from overcoming the things you once thought you couldn\'t.',
         'Your body can stand almost anything. It\'s your mind that you have to convince.',
-        'Success doesn\'t come from what you do occasionally. It comes from what you do consistently.',
     ];
 
     const quoteBox = document.getElementById('quote-box');
@@ -57,7 +57,8 @@ function displayDailyQuote() {
     }
 
     const quote = quotes[quoteIndex];
-    quoteBox.textContent = quote;
+    // Create a paragraph element for the quote to avoid issues with ::before pseudo-element
+    quoteBox.innerHTML = `<p>${quote}</p>`;
     quoteBox.style.display = 'block';
 }
 
@@ -68,14 +69,16 @@ function initExpandableItems() {
     document.querySelectorAll('.exercise-header').forEach(header => {
         header.addEventListener('click', () => {
             const detailsElement = header.nextElementSibling;
-            const iconElement = header.querySelector('.expand-icon');
 
             if (detailsElement) {
-                const isVisible = detailsElement.style.display === 'block';
-                detailsElement.style.display = isVisible ? 'none' : 'block';
-                // Toggle the icon
-                if (iconElement) {
-                    iconElement.textContent = isVisible ? '+' : '−';
+                // Toggle a class on the header for CSS to handle the icon rotation
+                header.classList.toggle('expanded');
+
+                // Animate the expansion
+                if (detailsElement.style.maxHeight) {
+                    detailsElement.style.maxHeight = null;
+                } else {
+                    detailsElement.style.maxHeight = detailsElement.scrollHeight + "px";
                 }
             }
         });
