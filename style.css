@@ -18,11 +18,15 @@ body {
     padding: 0;
 }
 
-/* Logo Styling */
-.app-logo {
-    display: block;
-    max-width: 250px;
-    margin: 0 auto 30px auto;
+/* Emoji Title Styling */
+.emoji-title {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 30px;
+}
+
+.emoji-title span {
+    margin: 0 4px;
 }
 
 /* Section Headings */
@@ -80,6 +84,16 @@ h2 {
 /* Add margin to the right of tab icons */
 .tab-button i {
     margin-right: 8px;
+}
+
+/* Styling for the custom image icon */
+.tab-icon-custom {
+    height: 1.1em;
+    width: auto;
+    margin-right: 8px;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
 }
 
 .tab-button.active {
@@ -180,9 +194,8 @@ li:hover {
         padding: 10px;
     }
     
-    .app-logo {
-        max-width: 200px;
-        margin-bottom: 25px;
+    .emoji-title {
+        font-size: 36px;
     }
 
     .quote-box {
