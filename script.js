@@ -18,14 +18,16 @@ function initTabs() {
 
     tabButtons.forEach(btn => {
         btn.addEventListener('click', function () {
+            // Remove .active class from all buttons and content panels
             tabButtons.forEach(b => b.classList.remove('active'));
-            tabContents.forEach(content => content.style.display = 'none');
+            tabContents.forEach(content => content.classList.remove('active'));
 
+            // Add .active class to the clicked button and its corresponding content panel
             this.classList.add('active');
             const targetId = this.getAttribute('data-target');
             const targetPanel = document.getElementById(targetId);
             if (targetPanel) {
-                targetPanel.style.display = 'block';
+                targetPanel.classList.add('active');
             }
         });
     });
@@ -57,7 +59,6 @@ function displayDailyQuote() {
     }
 
     const quote = quotes[quoteIndex];
-    // Create a paragraph element for the quote to avoid issues with ::before pseudo-element
     quoteBox.innerHTML = `<p>${quote}</p>`;
     quoteBox.style.display = 'block';
 }
@@ -74,11 +75,10 @@ function initExpandableItems() {
                 // Toggle a class on the header for CSS to handle the icon rotation
                 header.classList.toggle('expanded');
                 
-                // Animate the expansion using max-height for a smooth accordion effect
+                // Animate the expansion using max-height
                 if (detailsElement.style.maxHeight) {
                     detailsElement.style.maxHeight = null;
                 } else {
-                    detailsElement.style.display = 'block'; // Make it block before calculating scrollHeight
                     detailsElement.style.maxHeight = detailsElement.scrollHeight + "px";
                 }
             }
