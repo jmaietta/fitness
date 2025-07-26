@@ -29,13 +29,26 @@ h1, h2 {
 
 /* Quote box styling */
 .quote-box {
-    background-color: #f0f8ff;
-    border-left: 4px solid #007bff;
-    padding: 15px;
-    margin-bottom: 20px;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 25px;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 18px;
     font-style: italic;
-    border-radius: 5px;
-    display: none;
+    color: #495057;
+    display: none; /* Initially hidden */
+}
+
+/* Style for the quote icon */
+.quote-box::before {
+    content: '“';
+    font-size: 40px;
+    font-weight: bold;
+    color: #007bff;
+    display: block;
+    line-height: 1;
 }
 
 /* Tabs navigation */
@@ -103,13 +116,14 @@ li:last-child {
 
 .exercise-name {
     flex-grow: 1;
+    padding-right: 10px;
 }
 
 .expand-icon {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
-    margin-left: 15px;
     color: #007bff;
+    transition: transform 0.2s ease-in-out;
 }
 
 .details {
@@ -118,11 +132,11 @@ li:last-child {
     font-size: 14px;
     color: #555;
     border-top: 1px solid #f0f0f0;
-    margin-top: 5px;
+    margin: 5px 0;
 }
 
 .details p {
-    margin: 0 0 8px 0;
+    margin: 0 0 10px 0;
 }
 
 
@@ -140,6 +154,10 @@ li:last-child {
 
     h1 {
         font-size: 24px;
+    }
+    
+    .quote-box {
+        font-size: 16px;
     }
 
     .tab-button {
