@@ -56,8 +56,11 @@ h2 {
 /* Tabs navigation */
 .tabs {
     display: flex;
-    border-bottom: 2px solid #dee2e6;
     margin-bottom: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
 }
 
 .tab-button {
@@ -76,6 +79,7 @@ h2 {
 
 .tab-button.active {
     color: #2193b0;
+    background-color: #f8f9fa;
     border-bottom: 3px solid #2193b0;
 }
 
@@ -136,6 +140,9 @@ li:hover {
     font-size: 15px;
     color: #555;
     border-top: 1px solid #f0f0f0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
 }
 
 .details p { margin: 15px 0; }
@@ -152,4 +159,38 @@ li:hover {
 }
 .video-link:hover {
     background-color: #1c7a93;
+}
+
+/* --- Mobile Optimization --- */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 32px;
+    }
+
+    .quote-box {
+        font-size: 16px;
+    }
+
+    /* Stack tabs vertically on mobile */
+    .tabs {
+        flex-direction: column;
+        border-radius: 12px;
+    }
+
+    .tab-button {
+        border-bottom: 1px solid #eee;
+    }
+
+    .tab-button.active {
+        border-bottom: 1px solid #eee; /* Remove bottom border */
+        border-left: 4px solid #2193b0; /* Use left border for active state */
+    }
+
+    li {
+        font-size: 15px;
+    }
 }
