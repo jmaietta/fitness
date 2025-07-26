@@ -141,10 +141,18 @@ li:hover {
     border-top: 1px solid #f0f0f0;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
 }
 
-.details p { margin: 10px 0; }
+/* New rule to add padding only when expanded */
+.exercise-header.expanded + .details {
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.details p {
+    margin: 0 0 10px;
+}
 
 .video-link {
     display: inline-block;
@@ -155,8 +163,8 @@ li:hover {
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s ease;
-    margin-bottom: 15px;
 }
+
 .video-link:hover {
     background-color: #1c7a93;
 }
