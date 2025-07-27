@@ -228,5 +228,45 @@
         </div>
     </div>
     <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select all images that should be zoomable
+            const zoomableImages = document.querySelectorAll('.exercise-photo, .exercise-images img');
+
+            zoomableImages.forEach(image => {
+                image.addEventListener('click', () => {
+                    // Create the overlay div
+                    const overlay = document.createElement('div');
+                    overlay.classList.add('fullscreen-overlay');
+
+                    // Create the image element to show inside the overlay
+                    const fullscreenImage = document.createElement('img');
+                    fullscreenImage.src = image.src;
+                    fullscreenImage.alt = image.alt;
+
+                    // Add the image to the overlay
+                    overlay.appendChild(fullscreenImage);
+                    
+                    // Add the overlay to the page
+                    document.body.appendChild(overlay);
+
+                    // A tiny delay to allow the browser to render the overlay before animating it
+                    setTimeout(() => {
+                        overlay.classList.add('active');
+                    }, 10);
+                    
+                    // Add event listener to close the overlay when it's clicked
+                    overlay.addEventListener('click', () => {
+                        overlay.classList.remove('active');
+                        // Remove the overlay from the DOM after the closing animation finishes
+                        setTimeout(() => {
+                            document.body.removeChild(overlay);
+                        }, 300); // This duration should match the transition time in your CSS
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
