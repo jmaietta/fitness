@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forge</title>
 
-    <meta name="description" content="A simple and effective fitness app for stretching, cardio, and resistance training.">
-    
+    <meta name="description" content="A simple and effective fitness app for stretching, cardio, resistance training, and nutrition.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jmaietta.github.io/fitness/">
     <meta property="og:title" content="Forge Fitness">
-    <meta property="og:description" content="A simple and effective fitness app for stretching, cardio, and resistance training.">
+    <meta property="og:description" content="A simple and effective fitness app for stretching, cardio, resistance training, and nutrition.">
     <meta property="og:image" content="https://jmaietta.github.io/fitness/forge-logo.png">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://jmaietta.github.io/fitness/">
     <meta property="twitter:title" content="Forge Fitness">
-    <meta property="twitter:description" content="A simple and effective fitness app for stretching, cardio, and resistance training.">
+    <meta property="twitter:description" content="A simple and effective fitness app for stretching, cardio, resistance training, and nutrition.">
     <meta property="twitter:image" content="https://jmaietta.github.io/fitness/forge-logo.png">
 
     <link rel="stylesheet" href="style.css">
@@ -27,246 +26,273 @@
     <link rel="manifest" href="site.webmanifest">
 </head>
 <body>
-    <div class="app-container">
-        
-        <img src="forge-logo.png" alt="Forge Logo" class="app-logo">
+  <div class="app-container">
+    <img src="forge-logo.png" alt="Forge Logo" class="app-logo">
+    <div id="quote-box" class="quote-box"></div>
 
-        <div id="quote-box" class="quote-box"></div>
-
-        <div class="tabs">
-            <button class="tab-button active" data-target="stretching"><i class="fa-solid fa-child-reaching"></i> Stretching</button>
-            <button class="tab-button" data-target="cardio"><i class="fa-solid fa-person-running"></i> Cardio</button>
-            <button class="tab-button" data-target="resistance"><i class="fa-solid fa-dumbbell"></i> Resistance</button>
-        </div>
-
-        <div id="stretching" class="tab-content active">
-            <h2>Stretching Routine</h2>
-            <ul>
-                <li>
-                    <div class="exercise-header">
-                        <span class="exercise-name">Neck Stretch (2 sets of 15-second hold)</span>
-                        <span class="expand-icon">></span>
-                    </div>
-                    <div class="details">
-                        <p>Gently tilt your head, bringing your ear toward your shoulder until you feel a light stretch.</p>
-                        <img src="neck-stretch.png" alt="Neck stretch demonstration" class="exercise-photo">
-                    </div>
-                </li>
-                <li>
-                    <div class="exercise-header">
-                        <span class="exercise-name">Shoulder Stretch (2 sets of 15-second hold per side)</span>
-                        <span class="expand-icon">></span>
-                    </div>
-                    <div class="details">
-                        <p>Cross one arm over your chest and use the other arm to gently pull it closer to your body.</p>
-                        <img src="shoulder-stretch.png" alt="Shoulder stretch demonstration" class="exercise-photo">
-                    </div>
-                </li>
-                <li>
-                    <div class="exercise-header">
-                        <span class="exercise-name">Hamstring Stretch (2 sets of 30-second hold per leg)</span>
-                        <span class="expand-icon">></span>
-                    </div>
-                    <div class="details">
-                        <p>Sit on the floor with one leg extended, the other bent. Lean forward over the straight leg.</p>
-                        <img src="hamstring-stretch.png" alt="Hamstring stretch demonstration" class="exercise-photo">
-                    </div>
-                </li>
-                 <li>
-                    <div class="exercise-header">
-                        <span class="exercise-name">Quad Stretch (2 sets of 30-second hold per leg)</span>
-                        <span class="expand-icon">></span>
-                    </div>
-                    <div class="details">
-                        <p>While standing, hold onto a support, grab your ankle and gently pull your heel towards your glute.</p>
-                        <img src="quad-stretch.png" alt="Quad stretch demonstration" class="exercise-photo">
-                    </div>
-                </li>
-                <li>
-                    <div class="exercise-header">
-                        <span class="exercise-name">Calf Stretch (2 sets of 30-second hold per leg)</span>
-                        <span class="expand-icon">></span>
-                    </div>
-                    <div class="details">
-                        <p>Stand facing a wall with one foot forward. Lean into the wall, keeping your back leg straight.</p>
-                        <img src="calf-stretch.png" alt="Calf stretch demonstration" class="exercise-photo">
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <div id="cardio" class="tab-content">
-            <h2>Cardio Routine</h2>
-            <ul>
-                <li>
-                    <div class="exercise-header">
-                        <span class="exercise-name">Jumping Jacks (3 sets of 30 seconds)</span>
-                        <span class="expand-icon">></span>
-                    </div>
-                    <div class="details">
-                        <p>A full-body exercise. Jump while spreading your legs and bringing your arms overhead.</p>
-                        <img src="jumping-jacks.png" alt="Jumping Jacks demonstration" class="exercise-photo">
-                    </div>
-                </li>
-                <li>
-                    <div class="exercise-header">
-                        <span class="exercise-name">Burpees (3 sets of 10 reps)</span>
-                        <span class="expand-icon">></span>
-                    </div>
-                    <div class="details">
-                        <p>A challenging full-body move: squat, kick legs back to a plank, return to squat, and jump up.</p>
-                        <img src="burpee.png" alt="Burpee sequence demonstration" class="exercise-photo">
-                    </div>
-                </li>
-                <li>
-                    <div class="exercise-header">
-                        <span class="exercise-name">High Knees (3 sets of 30 seconds)</span>
-                        <span class="expand-icon">></span>
-                    </div>
-                    <div class="details">
-                        <p>Run in place, bringing your knees up towards your chest as high as possible.</p>
-                        <img src="high-knees.png" alt="High Knees demonstration" class="exercise-photo">
-                    </div>
-                </li>
-                <li>
-                    <div class="exercise-header">
-                        <span class="exercise-name">Mountain Climbers (3 sets of 30 seconds)</span>
-                        <span class="expand-icon">></span>
-                    </div>
-                    <div class="details">
-                        <p>From a plank position, alternate bringing each knee towards your chest, as if running.</p>
-                        <img src="mountain-climbers.png" alt="Mountain Climbers demonstration" class="exercise-photo">
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <div id="resistance" class="tab-content">
-            <h2>Resistance Routine</h2>
-            <ul>
-                <li>
-                    <div class="exercise-header">
-                        <span class="exercise-name">Push-ups (3 sets of 10 reps)</span>
-                        <span class="expand-icon">></span>
-                    </div>
-                    <div class="details">
-                        <p>Lower your body until your chest nearly touches the floor, keeping your back straight.</p>
-                        <img src="push-up.png" alt="Push-up demonstration" class="exercise-photo">
-                    </div>
-                </li>
-                <li>
-                    <div class="exercise-header">
-                        <span class="exercise-name">Squats (3 sets of 15 reps)</span>
-                        <span class="expand-icon">></span>
-                    </div>
-                    <div class="details">
-                        <p>Lower your hips as if sitting in a chair, keeping your chest up and back straight.</p>
-                        <img src="squats.png" alt="Squats demonstration" class="exercise-photo">
-                    </div>
-                </li>
-                <li>
-                    <div class="exercise-header">
-                        <span class="exercise-name">Lunges (3 sets of 10 reps each leg)</span>
-                        <span class="expand-icon">></span>
-                    </div>
-                    <div class="details">
-                        <p>Step forward with one leg and lower your hips until both knees are bent at a 90-degree angle.</p>
-                        <img src="lunges.png" alt="Lunges demonstration" class="exercise-photo">
-                    </div>
-                </li>
-                <li>
-                    <div class="exercise-header">
-                        <span class="exercise-name">Plank (3 sets of 30-second hold)</span>
-                        <span class="expand-icon">></span>
-                    </div>
-                    <div class="details">
-                        <p>Hold a push-up position, keeping your body in a straight line from head to heels.</p>
-                        <img src="plank.png" alt="Plank demonstration" class="exercise-photo">
-                    </div>
-                </li>
-                <li>
-                    <div class="exercise-header">
-                        <span class="exercise-name">Glute Bridges (3 sets of 15 reps)</span>
-                        <span class="expand-icon">></span>
-                    </div>
-                    <div class="details">
-                        <p>Lie on your back, lift your hips off the floor until your body forms a straight line.</p>
-                        <img src="glute-bridge.png" alt="Glute Bridges demonstration" class="exercise-photo">
-                    </div>
-                </li>
-                <li>
-                    <div class="exercise-header">
-                        <span class="exercise-name">Chair Dips (3 sets of 12 reps)</span>
-                        <span class="expand-icon">></span>
-                    </div>
-                    <div class="details">
-                        <p>Using a sturdy chair, lower your body down with your arms until your elbows are at 90 degrees.</p>
-                        <img src="chair-dip.png" alt="Chair Dips demonstration" class="exercise-photo">
-                    </div>
-                </li>
-                 <li>
-                    <div class="exercise-header">
-                        <span class="exercise-name">Calf Raises (3 sets of 20 reps)</span>
-                        <span class="expand-icon">></span>
-                    </div>
-                    <div class="details">
-                        <p>Stand with feet flat on the floor, then push through the balls of your feet to raise your heels.</p>
-                        <img src="calf-raises.png" alt="Calf Raises demonstration" class="exercise-photo">
-                    </div>
-                </li>
-                <li>
-                    <div class="exercise-header">
-                        <span class="exercise-name">Supermans (3 sets of 12 reps)</span>
-                        <span class="expand-icon">></span>
-                    </div>
-                    <div class="details">
-                        <p>Lie on your stomach and simultaneously lift your arms, legs, and chest off the floor.</p>
-                        <img src="Supermans.png" alt="Supermans demonstration" class="exercise-photo">
-                    </div>
-                </li>
-            </ul>
-        </div>
+    <div class="tabs">
+      <button class="tab-button active" data-target="stretching"><i class="fa-solid fa-child-reaching"></i> Stretching</button>
+      <button class="tab-button" data-target="cardio"><i class="fa-solid fa-person-running"></i> Cardio</button>
+      <button class="tab-button" data-target="resistance"><i class="fa-solid fa-dumbbell"></i> Resistance</button>
+      <button class="tab-button" data-target="nutrition"><i class="fa-solid fa-utensils"></i> Nutrition</button>
     </div>
-    <script src="script.js"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Select all images that should be zoomable
-            const zoomableImages = document.querySelectorAll('.exercise-photo, .exercise-images img');
+    <!-- Stretching Tab Content -->
+    <div id="stretching" class="tab-content active">
+      <h2>Stretching Routine</h2>
+      <ul>
+        <li>
+          <div class="exercise-header">
+            <span class="exercise-name">Neck Stretch (2 sets of 15-second hold)</span>
+            <span class="expand-icon">></span>
+          </div>
+          <div class="details">
+            <p>Gently tilt your head, bringing your ear toward your shoulder until you feel a light stretch.</p>
+            <img src="neck-stretch.png" alt="Neck stretch demonstration" class="exercise-photo">
+          </div>
+        </li>
+        <li>
+          <div class="exercise-header">
+            <span class="exercise-name">Shoulder Stretch (2 sets of 15-second hold per side)</span>
+            <span class="expand-icon">></span>
+          </div>
+          <div class="details">
+            <p>Cross one arm over your chest and use the other arm to gently pull it closer to your body.</p>
+            <img src="shoulder-stretch.png" alt="Shoulder stretch demonstration" class="exercise-photo">
+          </div>
+        </li>
+        <li>
+          <div class="exercise-header">
+            <span class="exercise-name">Hamstring Stretch (2 sets of 30-second hold per leg)</span>
+            <span class="expand-icon">></span>
+          </div>
+          <div class="details">
+            <p>Sit on the floor with one leg extended, the other bent. Lean forward over the straight leg.</p>
+            <img src="hamstring-stretch.png" alt="Hamstring stretch demonstration" class="exercise-photo">
+          </div>
+        </li>
+        <li>
+          <div class="exercise-header">
+            <span class="exercise-name">Quad Stretch (2 sets of 30-second hold per leg)</span>
+            <span class="expand-icon">></span>
+          </div>
+          <div class="details">
+            <p>While standing, hold onto a support, grab your ankle and gently pull your heel towards your glute.</p>
+            <img src="quad-stretch.png" alt="Quad stretch demonstration" class="exercise-photo">
+          </div>
+        </li>
+        <li>
+          <div class="exercise-header">
+            <span class="exercise-name">Calf Stretch (2 sets of 30-second hold per leg)</span>
+            <span class="expand-icon">></span>
+          </div>
+          <div class="details">
+            <p>Stand facing a wall with one foot forward. Lean into the wall, keeping your back leg straight.</p>
+            <img src="calf-stretch.png" alt="Calf stretch demonstration" class="exercise-photo">
+          </div>
+        </li>
+      </ul>
+    </div>
 
-            zoomableImages.forEach(image => {
-                image.addEventListener('click', () => {
-                    // Create the overlay div
-                    const overlay = document.createElement('div');
-                    overlay.classList.add('fullscreen-overlay');
+    <!-- Cardio Tab Content -->
+    <div id="cardio" class="tab-content">
+      <h2>Cardio Routine</h2>
+      <ul>
+        <li>
+          <div class="exercise-header">
+            <span class="exercise-name">Jumping Jacks (3 sets of 30 seconds)</span>
+            <span class="expand-icon">></span>
+          </div>
+          <div class="details">
+            <p>A full-body exercise. Jump while spreading your legs and bringing your arms overhead.</p>
+            <img src="jumping-jacks.png" alt="Jumping Jacks demonstration" class="exercise-photo">
+          </div>
+        </li>
+        <li>
+          <div class="exercise-header">
+            <span class="exercise-name">Burpees (3 sets of 10 reps)</span>
+            <span class="expand-icon">></span>
+          </div>
+          <div class="details">
+            <p>A challenging full-body move: squat, kick legs back to a plank, return to squat, and jump up.</p>
+            <img src="burpee.png" alt="Burpee sequence demonstration" class="exercise-photo">
+          </div>
+        </li>
+        <li>
+          <div class="exercise-header">
+            <span class="exercise-name">High Knees (3 sets of 30 seconds)</span>
+            <span class="expand-icon">></span>
+          </div>
+          <div class="details">
+            <p>Run in place, bringing your knees up towards your chest as high as possible.</p>
+            <img src="high-knees.png" alt="High Knees demonstration" class="exercise-photo">
+          </div>
+        </li>
+        <li>
+          <div class="exercise-header">
+            <span class="exercise-name">Mountain Climbers (3 sets of 30 seconds)</span>
+            <span class="expand-icon">></span>
+          </div>
+          <div class="details">
+            <p>From a plank position, alternate bringing each knee towards your chest, as if running.</p>
+            <img src="mountain-climbers.png" alt="Mountain Climbers demonstration" class="exercise-photo">
+          </div>
+        </li>
+      </ul>
+    </div>
 
-                    // Create the image element to show inside the overlay
-                    const fullscreenImage = document.createElement('img');
-                    fullscreenImage.src = image.src;
-                    fullscreenImage.alt = image.alt;
+    <!-- Resistance Tab Content -->
+    <div id="resistance" class="tab-content">
+      <h2>Resistance Routine</h2>
+      <ul>
+        <li>
+          <div class="exercise-header">
+            <span class="exercise-name">Push-ups (3 sets of 10 reps)</span>
+            <span class="expand-icon">></span>
+          </div>
+          <div class="details">
+            <p>Lower your body until your chest nearly touches the floor, keeping your back straight.</p>
+            <img src="push-up.png" alt="Push-up demonstration" class="exercise-photo">
+          </div>
+        </li>
+        <li>
+          <div class="exercise-header">
+            <span class="exercise-name">Squats (3 sets of 15 reps)</span>
+            <span class="expand-icon">></span>
+          </div>
+          <div class="details">
+            <p>Lower your hips as if sitting in a chair, keeping your chest up and back straight.</p>
+            <img src="squats.png" alt="Squats demonstration" class="exercise-photo">
+          </div>
+        </li>
+        <li>
+          <div class="exercise-header">
+            <span class="exercise-name">Lunges (3 sets of 10 reps each leg)</span>
+            <span class="expand-icon">></span>
+          </div>
+          <div class="details">
+            <p>Step forward with one leg and lower your hips until both knees are bent at a 90-degree angle.</p>
+            <img src="lunges.png" alt="Lunges demonstration" class="exercise-photo">
+          </div>
+        </li>
+        <li>
+          <div class="exercise-header">
+            <span class="exercise-name">Plank (3 sets of 30-second hold)</span>
+            <span class="expand-icon">></span>
+          </div>
+          <div class="details">
+            <p>Hold a push-up position, keeping your body in a straight line from head to heels.</p>
+            <img src="plank.png" alt="Plank demonstration" class="exercise-photo">
+          </div>
+        </li>
+        <li>
+          <div class="exercise-header">
+            <span class="exercise-name">Glute Bridges (3 sets of 15 reps)</span>
+            <span class="expand-icon">></span>
+          </div>
+          <div class="details">
+            <p>Lie on your back, lift your hips off the floor until your body forms a straight line.</p>
+            <img src="glute-bridge.png" alt="Glute Bridges demonstration" class="exercise-photo">
+          </div>
+        </li>
+        <li>
+          <div class="exercise-header">
+            <span class="exercise-name">Chair Dips (3 sets of 12 reps)</span>
+            <span class="expand-icon">></span>
+          </div>
+          <div class="details">
+            <p>Using a sturdy chair, lower your body down with your arms until your elbows are at 90 degrees.</p>
+            <img src="chair-dip.png" alt="Chair Dips demonstration" class="exercise-photo">
+          </div>
+        </li>
+        <li>
+          <div class="exercise-header">
+            <span class="exercise-name">Calf Raises (3 sets of 20 reps)</span>
+            <span class="expand-icon">></span>
+          </div>
+          <div class="details">
+            <p>Stand with feet flat on the floor, then push through the balls of your feet to raise your heels.</p>
+            <img src="calf-raises.png" alt="Calf Raises demonstration" class="exercise-photo">
+          </div>
+        </li>
+        <li>
+          <div class="exercise-header">
+            <span class="exercise-name">Supermans (3 sets of 12 reps)</span>
+            <span class="expand-icon">></span>
+          </div>
+          <div class="details">
+            <p>Lie on your stomach and simultaneously lift your arms, legs, and chest off the floor.</p>
+            <img src="Supermans.png" alt="Supermans demonstration" class="exercise-photo">
+          </div>
+        </li>
+      </ul>
+    </div>
 
-                    // Add the image to the overlay
-                    overlay.appendChild(fullscreenImage);
-                    
-                    // Add the overlay to the page
-                    document.body.appendChild(overlay);
-
-                    // A tiny delay to allow the browser to render the overlay before animating it
-                    setTimeout(() => {
-                        overlay.classList.add('active');
-                    }, 10);
-                    
-                    // Add event listener to close the overlay when it's clicked
-                    overlay.addEventListener('click', () => {
-                        overlay.classList.remove('active');
-                        // Remove the overlay from the DOM after the closing animation finishes
-                        setTimeout(() => {
-                            document.body.removeChild(overlay);
-                        }, 300); // This duration should match the transition time in your CSS
-                    });
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+    <!-- Nutrition Tab Content -->
+    <div id="nutrition" class="tab-content">
+      <h2>Nutrition Guide</h2>
+      <!-- Personalization Form -->
+      <div class="nutrition-form" style="background:#fff;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);padding:20px;margin-bottom:20px;">
+        <h3 style="font-family:'Oswald',sans-serif;color:#2c3e50;margin-bottom:10px;">Personalize Your Plan</h3>
+        <form>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:10px;">
+            <label style="flex:1;min-width:120px;"><strong>Sex:</strong><br><select><option>Male</option><option>Female</option></select></label>
+            <label style="flex:1;min-width:120px;"><strong>Age:</strong><br><select><option>Under 30</option><option>30–50</option><option>50+</option></select></label>
+            <label style="flex:1;min-width:120px;"><strong>Weight (lb):</strong><br><input type="number" placeholder="e.g. 150"></label>
+            <label style="flex:1;min-width:140px;"><strong>Goal:</strong><br><select><option>Maintain</option><option>Lean Bulk</option><option>Fat Loss</option></select></label>
+          </div>
+          <button type="button" style="background:#2193b0;color:#fff;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;">Calculate Macros</button>
+        </form>
+      </div>
+      <ul>
+        <li>
+          <div class="exercise-header">
+            <span class="exercise-name">Animal Proteins</span>
+            <span class="expand-icon">></span>
+          </div>
+          <div class="details">
+            <div style="overflow-x:auto;">
+              <table style="width:100%;font-size:14px;border-collapse:collapse;">
+                <thead style="background:#f0f0f0;"><tr><th style="padding:8px;text-align:left;">Food</th><th>Protein</th><th>Carbs</th><th>Fats</th><th>Calories</th></tr></thead>
+                <tbody>
+                  <tr><td>Chicken breast (4 oz)</td><td>27g</td><td>0g</td><td>3g</td><td>140</td></tr>
+                  <tr><td>Salmon (3 oz)</td><td>19g</td><td>0g</td><td>11g</td><td>180</td></tr>
+                  <tr><td>Bison (4 oz, lean)</td><td>24g</td><td>0g</td><td>3g</td><td>140</td></tr>
+                  <tr><td>Lean ground beef (90%, 4 oz)</td><td>23g</td><td>0g</td><td>9g</td><td>190</td></tr>
+                  <tr><td>Pork loin (4 oz)</td><td>22g</td><td>0g</td><td>4g</td><td>160</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="exercise-header">
+            <span class="exercise-name">Plant Proteins &amp; Legumes</span>
+            <span class="expand-icon">></span>
+          </div>
+          <div class="details">
+            <div style="overflow-x:auto;">
+              <table style="width:100%;font-size:14px;border-collapse:collapse;">
+                <thead style="background:#f0f0f0;"><tr><th style="padding:8px;text-align:left;">Food</th><th>Protein</th><th>Carbs</th><th>Fats</th><th>Calories</th></tr></thead>
+                <tbody>
+                  <tr><td>Black beans (1 cup cooked)</td><td>15g</td><td>40g</td><td>1g</td><td>225</td></tr>
+                  <tr><td>Lentils (1 cup cooked)</td><td>18g</td><td>40g</td><td>1g</td><td>230</td></tr>
+                  <tr><td>Tofu (4 oz)</td><td>10g</td><td>2g</td><td>6g</td><td>90</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="exercise-header">
+            <span class="exercise-name">Whole Grains &amp; Carbs</span>
+            <span class="expand-icon">></span>
+          </div>
+          <div class="details">
+            <div style="overflow-x:auto;">
+              <table style="width:100%;font-size:14px;border-collapse:collapse;">
+                <thead style="background:#f0f0f0;"><tr><th style="padding:8px;text-align:left;">Food</th><th>Protein</th><th>Carbs</th><th>Fats</th><th>Calories</th></tr></thead>
+                <tbody>
+                  <tr><td>Brown rice (1 cup cooked)</td><td>5g</td><td>45g</td><td>1g</td><td>215</td></tr>
+                  <tr><td>Oats (1/2 cup dry)</td><td>5g</td><td>27g</td><td>3g</td><td>150</td></tr>
+                  <tr><td>Quinoa (1 cup cooked)</td><td>8g</td><td>39g
