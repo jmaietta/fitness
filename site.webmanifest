@@ -14,6 +14,50 @@
             "type": "image/png"
         }
     ],
+    "screenshots": [
+        {
+            "src": "/screenshots_1.jpg",
+            "sizes": "1080x2340",
+            "type": "image/jpeg",
+            "form_factor": "narrow",
+            "label": "App home screen with main categories"
+        },
+        {
+            "src": "/screenshots_2.jpg",
+            "sizes": "1080x2340",
+            "type": "image/jpeg",
+            "form_factor": "narrow",
+            "label": "Detailed exercise view with instructions"
+        },
+        {
+            "src": "/screenshots_3.jpg",
+            "sizes": "1080x2340",
+            "type": "image/jpeg",
+            "form_factor": "narrow",
+            "label": "Cardio routine screen"
+        },
+        {
+            "src": "/screenshots_4.jpg",
+            "sizes": "1080x2340",
+            "type": "image/jpeg",
+            "form_factor": "narrow",
+            "label": "Detailed nutrition info for food items"
+        },
+        {
+            "src": "/screenshots_5.jpg",
+            "sizes": "1080x2340",
+            "type": "image/jpeg",
+            "form_factor": "narrow",
+            "label": "Lists of different food types"
+        },
+        {
+            "src": "/screenshots_6.jpg",
+            "sizes": "1080x2340",
+            "type": "image/jpeg",
+            "form_factor": "narrow",
+            "label": "Helpful dietary tips and heuristics"
+        }
+    ],
     "theme_color": "#2193b0",
     "background_color": "#f4f7f6",
     "start_url": "/",
