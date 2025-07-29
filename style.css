@@ -1,3 +1,4 @@
+
 /* Import Google Fonts at the top of the file */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;700&display=swap');
 
@@ -26,14 +27,22 @@ body {
 }
 
 /* Section Headings */
-h2 {
+h2, h3 {
     font-family: 'Oswald', sans-serif;
     font-weight: 500;
     text-align: left;
     margin-top: 20px;
     margin-bottom: 15px;
     color: #34495e;
+}
+
+h2 {
     font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-top: 30px;
 }
 
 /* Quote box styling */
@@ -242,7 +251,6 @@ li:hover {
     transform: scale(1);
 }
 
-
 /* --- Mobile Optimization --- */
 @media (max-width: 600px) {
     body {
@@ -277,4 +285,58 @@ li:hover {
     li {
         font-size: 15px;
     }
+}
+
+/* --- NEW STYLES FOR FOOD TAB --- */
+
+.heuristics-list {
+    padding: 0 20px;
+}
+
+.heuristics-list li {
+    background-color: transparent;
+    box-shadow: none;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+    border-radius: 0;
+}
+
+.heuristics-list li:last-child {
+    border-bottom: none;
+}
+
+.food-details-table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+.food-details-table td {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 15px;
+}
+
+.food-details-table tr:last-child td {
+    border-bottom: none;
+}
+
+.food-details-table td:last-child {
+    text-align: right;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.disclaimer {
+    font-size: 12px;
+    font-style: italic;
+    color: #777;
+    margin: 30px 20px 10px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    line-height: 1.6;
 }
