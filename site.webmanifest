@@ -19,5 +19,8 @@
     "start_url": "/",
     "display": "standalone",
     "scope": "/",
-    "id": "/"
+    "id": "/",
+    "launch_handler": {
+        "client_mode": "navigate-existing"
+    }
 }
