@@ -106,7 +106,7 @@ function initExpandableItems() {
  * Builds the HTML content for the Food tab from the data in food_data.js
  */
 function initFoodTab() {
-    const foodContainer = document.getElementById('food');
+    const foodContainer = document.getElementById('nutrition');
     if (!foodContainer) return;
 
     let content = '<h2>Nutrition Guide</h2>';
