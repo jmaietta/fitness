@@ -154,9 +154,10 @@ function initFoodTab() {
                 </div>
                 <div class="details">
                     <p><strong>Portion:</strong> ${item.portion}</p>
-                    <p>${item.info}</p>
                     <table class="food-details-table">
-                         <tr><td>Approx. Calories</td><td>${item.calories}</td></tr>
+                        <tr><td>Approx. Carbs</td><td>${item.carbs}</td></tr>
+                        <tr><td>Approx. Fat</td><td>${item.fat}</td></tr>
+                        <tr><td>Approx. Calories</td><td>${item.calories}</td></tr>
                     </table>
                 </div>
             </li>
