@@ -67,5 +67,10 @@
     "id": "/",
     "launch_handler": {
         "client_mode": "navigate-existing"
-    }
+    },
+    "categories": [
+        "fitness",
+        "health",
+        "lifestyle"
+    ]
 }
