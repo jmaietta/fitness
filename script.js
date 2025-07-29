@@ -1,4 +1,3 @@
-
 // JavaScript logic for the fitness app
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -6,14 +5,14 @@ document.addEventListener('DOMContentLoaded', function () {
     initTabs();
     // Show a motivational quote once per 24 hours
     displayDailyQuote();
-    // Initialize expandable exercise details
+    // Initialize expandable items using a more robust method
     initExpandableItems();
-    // Build the content for the Food tab
+    // Build the content for the Nutrition tab
     initFoodTab();
 });
 
 /**
- * Sets up click handlers for navigation tabs
+ * Sets up click handlers for navigation tabs.
  */
 function initTabs() {
     const tabButtons = document.querySelectorAll('.tab-button');
@@ -74,8 +73,8 @@ function displayDailyQuote() {
 }
 
 /**
- * Sets up click handlers for expandable headers to toggle the visibility of the details section.
- * Uses event delegation to work for dynamically added content.
+ * Sets up a single click handler on the main container to manage all expandable items.
+ * This method (event delegation) works for both static and dynamically added content.
  */
 function initExpandableItems() {
     const container = document.querySelector('.app-container');
@@ -84,7 +83,11 @@ function initExpandableItems() {
     container.addEventListener('click', function(event) {
         // Find the closest .exercise-header ancestor of the clicked element
         const header = event.target.closest('.exercise-header');
-        if (!header) return; // If the click was not on or inside a header, do nothing
+        
+        // If the click was not on or inside a header, do nothing
+        if (!header) {
+            return;
+        }
 
         const detailsElement = header.nextElementSibling;
 
@@ -102,25 +105,37 @@ function initExpandableItems() {
     });
 }
 
-
 /**
- * Builds the HTML content for the Food tab from the data in food_data.js
+ * Builds the HTML content for the Nutrition tab from the data in food_data.js
  */
 function initFoodTab() {
+    // Note: This function now uses the id "nutrition"
     const foodContainer = document.getElementById('nutrition');
     if (!foodContainer) return;
 
-    let content = '<h2>Nutrition Guide</h2>';
+    // --- 1. Visual Header Banner ---
+    let content = `
+        <div class="nutrition-header">
+            <h2>Nutrition Guide</h2>
+            <p>Use these heuristics to build a balanced, healthy diet that fuels your goals.</p>
+        </div>
+    `;
 
-    // General Heuristics
+    // --- 2. General Heuristics with Icons ---
     content += '<h3>General Dietary Heuristics</h3>';
-    content += '<ul class="heuristics-list">';
-    generalHeuristics.forEach(heuristic => {
-        content += `<li>${heuristic}</li>`;
+    content += '<div class="heuristics-container">';
+    const icons = ["fa-bullseye", "fa-bullseye", "fa-tint", "fa-utensils", "fa-balance-scale"];
+    generalHeuristics.forEach((heuristic, index) => {
+        content += `
+            <div class="heuristic-card">
+                <div class="heuristic-icon"><i class="fa-solid ${icons[index] || 'fa-star'}"></i></div>
+                <div class="heuristic-text">${heuristic}</div>
+            </div>
+        `;
     });
-    content += '</ul>';
+    content += '</div>';
 
-    // Protein Sources
+    // --- 3. Protein Sources with Visualized Macros ---
     content += '<h3>Protein Sources</h3>';
     content += '<ul>';
     proteinSources.forEach(item => {
@@ -132,18 +147,27 @@ function initFoodTab() {
                 </div>
                 <div class="details">
                     <p><strong>Portion:</strong> ${item.portion}</p>
-                    <table class="food-details-table">
-                        <tr><td>Approx. Protein</td><td>${item.protein}</td></tr>
-                        <tr><td>Approx. Fat</td><td>${item.fat}</td></tr>
-                        <tr><td>Approx. Calories</td><td>${item.calories}</td></tr>
-                    </table>
+                    <div class="macro-stats">
+                        <div class="stat">
+                            <span class="stat-value">${item.protein}</span>
+                            <span class="stat-label">Protein</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">${item.fat}</span>
+                            <span class="stat-label">Fat</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">${item.calories}</span>
+                            <span class="stat-label">Calories</span>
+                        </div>
+                    </div>
                 </div>
             </li>
         `;
     });
     content += '</ul>';
 
-    // Other Sources
+    // --- 4. Other Sources with Visualized Macros ---
     content += '<h3>Carbs, Fats & Produce</h3>';
     content += '<ul>';
     otherSources.forEach(item => {
@@ -155,11 +179,20 @@ function initFoodTab() {
                 </div>
                 <div class="details">
                     <p><strong>Portion:</strong> ${item.portion}</p>
-                    <table class="food-details-table">
-                        <tr><td>Approx. Carbs</td><td>${item.carbs}</td></tr>
-                        <tr><td>Approx. Fat</td><td>${item.fat}</td></tr>
-                        <tr><td>Approx. Calories</td><td>${item.calories}</td></tr>
-                    </table>
+                     <div class="macro-stats">
+                        <div class="stat">
+                            <span class="stat-value">${item.carbs}</span>
+                            <span class="stat-label">Carbs</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">${item.fat}</span>
+                            <span class="stat-label">Fat</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">${item.calories}</span>
+                            <span class="stat-label">Calories</span>
+                        </div>
+                    </div>
                 </div>
             </li>
         `;
