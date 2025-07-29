@@ -3,6 +3,8 @@
     "short_name": "Forge",
     "description": "A simple and effective fitness app for stretching, cardio, and resistance training complemented by modern nutritional intelligence.",
     "dir": "ltr",
+    "lang": "en",
+    "iarc_rating_id": "",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
