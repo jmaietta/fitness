@@ -61,6 +61,18 @@
             "label": "Helpful dietary tips and heuristics"
         }
     ],
+    "shortcuts": [
+        {
+            "name": "Cardio",
+            "url": "/",
+            "description": "View cardio exercises"
+        },
+        {
+            "name": "Nutrition",
+            "url": "/",
+            "description": "View the nutrition guide"
+        }
+    ],
     "theme_color": "#2193b0",
     "background_color": "#f4f7f6",
     "start_url": "/",
@@ -75,5 +87,12 @@
         "fitness",
         "health",
         "lifestyle"
+    ],
+    "prefer_related_applications": true,
+    "related_applications": [
+        {
+            "platform": "play",
+            "id": "app.web.forgebodyfit.twa"
+        }
     ]
 }
