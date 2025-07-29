@@ -26,14 +26,22 @@ body {
 }
 
 /* Section Headings */
-h2 {
+h2, h3 {
     font-family: 'Oswald', sans-serif;
     font-weight: 500;
     text-align: left;
     margin-top: 20px;
     margin-bottom: 15px;
     color: #34495e;
+}
+
+h2 {
     font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-top: 30px;
 }
 
 /* Quote box styling */
@@ -189,6 +197,59 @@ li:hover {
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+/* --- Styles for Fullscreen Image Viewer --- */
+
+/* Add a pointer cursor to all exercise photos to show they are clickable */
+.exercise-photo, .exercise-images img {
+    cursor: zoom-in;
+    transition: transform 0.2s ease;
+}
+
+/* A subtle hover effect for desktop users */
+.exercise-photo:hover, .exercise-images img:hover {
+    transform: scale(1.03);
+}
+
+/* The dark overlay behind the image */
+.fullscreen-overlay {
+    position: fixed; /* Sits on top of all other content */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Semi-transparent black */
+    display: flex; /* Uses flexbox to center the image */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensures it's on top */
+    cursor: zoom-out; /* Indicates it can be closed */
+    opacity: 0; /* Starts as invisible */
+    visibility: hidden; /* Starts as hidden and non-interactable */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* A class to make the overlay visible */
+.fullscreen-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* The actual image when it "explodes out" */
+.fullscreen-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain; /* Ensures image aspect ratio is maintained */
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    transform: scale(0.8); /* Starts slightly smaller */
+    transition: transform 0.3s ease; /* Smooth animation */
+}
+
+/* Animate the image to its full size when the overlay becomes active */
+.fullscreen-overlay.active img {
+    transform: scale(1);
+}
+
 /* --- Mobile Optimization --- */
 @media (max-width: 600px) {
     body {
@@ -223,4 +284,58 @@ li:hover {
     li {
         font-size: 15px;
     }
+}
+
+/* --- NEW STYLES FOR FOOD TAB --- */
+
+.heuristics-list {
+    padding: 0 20px;
+}
+
+.heuristics-list li {
+    background-color: transparent;
+    box-shadow: none;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+    border-radius: 0;
+}
+
+.heuristics-list li:last-child {
+    border-bottom: none;
+}
+
+.food-details-table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+.food-details-table td {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 15px;
+}
+
+.food-details-table tr:last-child td {
+    border-bottom: none;
+}
+
+.food-details-table td:last-child {
+    text-align: right;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.disclaimer {
+    font-size: 12px;
+    font-style: italic;
+    color: #777;
+    margin: 30px 20px 10px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    line-height: 1.6;
 }
