@@ -10,13 +10,13 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.forgebodyfit.com/">
     <meta property="og:title" content="Forge Fitness">
-    <meta property="og:description" content="A simple and effective fitness app for stretching, cardio, and resistance training complemented by modern nutritional intelligence.">
+    <meta property="og:description" content="A simple and effective fitness app for stretching, cardio, and resistance training.">
     <meta property="og:image" content="https://www.forgebodyfit.com//forge-logo.png">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.forgebodyfit.com/">
     <meta property="twitter:title" content="Forge Fitness">
-    <meta property="twitter:description" content="A simple and effective fitness app for stretching, cardio, and resistance training complemented by modern nutritional intelligence.">
+    <meta property="twitter:description" content="A simple and effective fitness app for stretching, cardio, and resistance training.">
     <meta property="twitter:image" content="https://www.forgebodyfit.com//forge-logo.png">
 
     <link rel="stylesheet" href="style.css">
@@ -283,6 +283,20 @@
                 });
             });
         });
+    </script>
+    
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
     </script>
 </body>
 </html>
