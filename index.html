@@ -8,16 +8,16 @@
     <meta name="description" content="A simple and effective fitness app for stretching, cardio, and resistance training.">
     
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jmaietta.github.io/fitness/">
+    <meta property="og:url" content="https://www.forgebodyfit.com/">
     <meta property="og:title" content="Forge Fitness">
     <meta property="og:description" content="A simple and effective fitness app for stretching, cardio, and resistance training.">
-    <meta property="og:image" content="https://jmaietta.github.io/fitness/forge-logo.png">
+    <meta property="og:image" content="https://www.forgebodyfit.com//forge-logo.png">
 
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://jmaietta.github.io/fitness/">
+    <meta property="twitter:url" content="https://www.forgebodyfit.com/">
     <meta property="twitter:title" content="Forge Fitness">
     <meta property="twitter:description" content="A simple and effective fitness app for stretching, cardio, and resistance training.">
-    <meta property="twitter:image" content="https://jmaietta.github.io/fitness/forge-logo.png">
+    <meta property="twitter:image" content="https://www.forgebodyfit.com//forge-logo.png">
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -37,6 +37,7 @@
             <button class="tab-button active" data-target="stretching"><i class="fa-solid fa-child-reaching"></i> Stretching</button>
             <button class="tab-button" data-target="cardio"><i class="fa-solid fa-person-running"></i> Cardio</button>
             <button class="tab-button" data-target="resistance"><i class="fa-solid fa-dumbbell"></i> Resistance</button>
+            <button class="tab-button" data-target="food"><i class="fa-solid fa-utensils"></i> Food</button>
         </div>
 
         <div id="stretching" class="tab-content active">
@@ -226,7 +227,53 @@
                 </li>
             </ul>
         </div>
+
+        <div id="food" class="tab-content">
+            </div>
+
     </div>
+
+    <script src="food_data.js"></script>
     <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select all images that should be zoomable
+            const zoomableImages = document.querySelectorAll('.exercise-photo, .exercise-images img');
+
+            zoomableImages.forEach(image => {
+                image.addEventListener('click', () => {
+                    // Create the overlay div
+                    const overlay = document.createElement('div');
+                    overlay.classList.add('fullscreen-overlay');
+
+                    // Create the image element to show inside the overlay
+                    const fullscreenImage = document.createElement('img');
+                    fullscreenImage.src = image.src;
+                    fullscreenImage.alt = image.alt;
+
+                    // Add the image to the overlay
+                    overlay.appendChild(fullscreenImage);
+                    
+                    // Add the overlay to the page
+                    document.body.appendChild(overlay);
+
+                    // A tiny delay to allow the browser to render the overlay before animating it
+                    setTimeout(() => {
+                        overlay.classList.add('active');
+                    }, 10);
+                    
+                    // Add event listener to close the overlay when it's clicked
+                    overlay.addEventListener('click', () => {
+                        overlay.classList.remove('active');
+                        // Remove the overlay from the DOM after the closing animation finishes
+                        setTimeout(() => {
+                            document.body.removeChild(overlay);
+                        }, 300); // This duration should match the transition time in your CSS
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
