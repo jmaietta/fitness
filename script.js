@@ -1,4 +1,3 @@
-
 // JavaScript logic for the fitness app
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -8,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
     displayDailyQuote();
     // Initialize expandable exercise details
     initExpandableItems();
+    // Build the content for the Food tab
+    initFoodTab();
 });
 
 /**
@@ -72,24 +73,99 @@ function displayDailyQuote() {
 }
 
 /**
- * Sets up click handlers for exercise headers to toggle the visibility of the details section.
+ * Sets up click handlers for expandable headers to toggle the visibility of the details section.
+ * Uses event delegation to work for dynamically added content.
  */
 function initExpandableItems() {
-    document.querySelectorAll('.exercise-header').forEach(header => {
-        header.addEventListener('click', () => {
-            const detailsElement = header.nextElementSibling;
+    const container = document.querySelector('.app-container');
+    if (!container) return;
 
-            if (detailsElement) {
-                // Toggle a class on the header for CSS to handle the icon rotation
-                header.classList.toggle('expanded');
-                
-                // Animate the expansion using max-height
-                if (detailsElement.style.maxHeight) {
-                    detailsElement.style.maxHeight = null;
-                } else {
-                    detailsElement.style.maxHeight = detailsElement.scrollHeight + "px";
-                }
+    container.addEventListener('click', function(event) {
+        // Find the closest .exercise-header ancestor of the clicked element
+        const header = event.target.closest('.exercise-header');
+        if (!header) return; // If the click was not on or inside a header, do nothing
+
+        const detailsElement = header.nextElementSibling;
+
+        if (detailsElement && detailsElement.classList.contains('details')) {
+            // Toggle a class on the header for CSS to handle the icon rotation
+            header.classList.toggle('expanded');
+            
+            // Animate the expansion using max-height
+            if (detailsElement.style.maxHeight) {
+                detailsElement.style.maxHeight = null;
+            } else {
+                detailsElement.style.maxHeight = detailsElement.scrollHeight + "px";
             }
-        });
+        }
     });
+}
+
+
+/**
+ * Builds the HTML content for the Food tab from the data in food_data.js
+ */
+function initFoodTab() {
+    const foodContainer = document.getElementById('food');
+    if (!foodContainer) return;
+
+    let content = '<h2>Nutrition Guide</h2>';
+
+    // General Heuristics
+    content += '<h3>General Dietary Heuristics</h3>';
+    content += '<ul class="heuristics-list">';
+    generalHeuristics.forEach(heuristic => {
+        content += `<li>${heuristic}</li>`;
+    });
+    content += '</ul>';
+
+    // Protein Sources
+    content += '<h3>Protein Sources</h3>';
+    content += '<ul>';
+    proteinSources.forEach(item => {
+        content += `
+            <li>
+                <div class="exercise-header">
+                    <span class="exercise-name">${item.name}</span>
+                    <span class="expand-icon">></span>
+                </div>
+                <div class="details">
+                    <p><strong>Portion:</strong> ${item.portion}</p>
+                    <table class="food-details-table">
+                        <tr><td>Approx. Protein</td><td>${item.protein}</td></tr>
+                        <tr><td>Approx. Fat</td><td>${item.fat}</td></tr>
+                        <tr><td>Approx. Calories</td><td>${item.calories}</td></tr>
+                    </table>
+                </div>
+            </li>
+        `;
+    });
+    content += '</ul>';
+
+    // Other Sources
+    content += '<h3>Carbs, Fats & Produce</h3>';
+    content += '<ul>';
+    otherSources.forEach(item => {
+        content += `
+            <li>
+                <div class="exercise-header">
+                    <span class="exercise-name">${item.name}</span>
+                    <span class="expand-icon">></span>
+                </div>
+                <div class="details">
+                    <p><strong>Portion:</strong> ${item.portion}</p>
+                    <p>${item.info}</p>
+                    <table class="food-details-table">
+                         <tr><td>Approx. Calories</td><td>${item.calories}</td></tr>
+                    </table>
+                </div>
+            </li>
+        `;
+    });
+    content += '</ul>';
+
+    // Disclaimer
+    content += `<p class="disclaimer">${disclaimerText}</p>`;
+
+    foodContainer.innerHTML = content;
 }
