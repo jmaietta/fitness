@@ -17,13 +17,13 @@ const proteinSources = [
 ];
 
 const otherSources = [
-  { name: "Rice, Pasta (Cooked)", portion: "1 Cupped Hand", info: "A primary source of energy.", calories: "120-150" },
-  { name: "Fresh Bread", portion: "1 Slice", info: "Whole wheat is generally preferred.", calories: "80-110" },
-  { name: "Fruits (Apple, Banana)", portion: "1 Fist", info: "Provides vitamins and fiber.", calories: "90-120" },
-  { name: "Vegetables (Broccoli, etc.)", portion: "1 Fist", info: "Eat freely; rich in micronutrients.", calories: "30-50" },
-  { name: "Lettuce, Leafy Greens", portion: "2 Full Hands", info: "A great way to add volume to meals.", calories: "<20" },
-  { name: "Natural Peanut Butter", portion: "1 Thumb", info: "Source of healthy fats.", calories: "100" },
-  { name: "Olive Oil, Butter", portion: "1 Thumb", info: "Use for cooking and flavor.", calories: "120" }
+  { name: "Rice, Pasta (Cooked)", portion: "1 Cupped Hand", carbs: "25-30g", fat: "<1g", calories: "120-150" },
+  { name: "Fresh Bread", portion: "1 Slice", carbs: "15-20g", fat: "1-2g", calories: "80-110" },
+  { name: "Fruits (Apple, Banana)", portion: "1 Fist", carbs: "20-25g", fat: "<1g", calories: "90-120" },
+  { name: "Vegetables (Broccoli, etc.)", portion: "1 Fist", carbs: "5-10g", fat: "<1g", calories: "30-50" },
+  { name: "Lettuce, Leafy Greens", portion: "2 Full Hands", carbs: "<5g", fat: "0g", calories: "<20" },
+  { name: "Natural Peanut Butter", portion: "1 Thumb", carbs: "3g", fat: "8g", calories: "100" },
+  { name: "Olive Oil, Butter", portion: "1 Thumb", carbs: "0g", fat: "14g", calories: "120" }
 ];
 
 const disclaimerText = "The information provided in this application is for general informational purposes only. It is not intended as medical advice and should not be used for diagnosis or treatment. Please consult with a qualified healthcare professional or registered dietitian before making any changes to your diet or exercise routine.";
