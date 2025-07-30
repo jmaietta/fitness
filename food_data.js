@@ -7,13 +7,13 @@ const generalHeuristics = [
 ];
 
 const proteinSources = [
-  { name: "Lean Beef, Bison, Elk", portion: "1 Palm-Sized Portion", protein: "25g", fat: "8-12g", calories: "180-220" },
-  { name: "Fatty Beef, Pork", portion: "1 Palm-Sized Portion", protein: "22g", fat: "15-20g", calories: "230-280" },
-  { name: "Chicken, Turkey Breast", portion: "1 Palm-Sized Portion", protein: "30g", fat: "4g", calories: "165" },
-  { name: "Fish (Salmon, Cod)", portion: "1 Palm-Sized Portion", protein: "25g", fat: "10-15g", calories: "200-250" },
-  { name: "Large Egg", portion: "1 Egg", protein: "6g", fat: "5g", calories: "75" },
-  { name: "Greek Yogurt (Plain)", portion: "1 Cupped Hand", protein: "18g", fat: "0-5g", calories: "120" },
-  { name: "Beans (Black, Kidney)", portion: "1 Cupped Hand", protein: "7g", fat: "<1g", calories: "115" }
+  { name: "Lean Beef, Bison, Elk", portion: "1 Palm-Sized Portion", protein: "25g", fat: "8-12g", calories: "180-220", image: "bison-pic.png" },
+  { name: "Fatty Beef, Pork", portion: "1 Palm-Sized Portion", protein: "22g", fat: "15-20g", calories: "230-280", image: "beef-pic.png" },
+  { name: "Chicken, Turkey Breast", portion: "1 Palm-Sized Portion", protein: "30g", fat: "4g", calories: "165", image: "chicken-pic.png" },
+  { name: "Fish (Salmon, Cod)", portion: "1 Palm-Sized Portion", protein: "25g", fat: "10-15g", calories: "200-250", image: "salmon-pic.png" },
+  { name: "Large Egg", portion: "1 Egg", protein: "6g", fat: "5g", calories: "75", image: "egg-pic.png" },
+  { name: "Greek Yogurt (Plain)", portion: "1 Cupped Hand", protein: "18g", fat: "0-5g", calories: "120", image: "yogurt-pic.png" },
+  { name: "Beans (Black, Kidney)", portion: "1 Cupped Hand", protein: "7g", fat: "<1g", calories: "115", image: "beans-pic.png" }
 ];
 
 const otherSources = [
