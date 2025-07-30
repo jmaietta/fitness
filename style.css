@@ -324,35 +324,6 @@ li:hover {
     line-height: 1.6;
 }
 
-/* --- Mobile Optimization --- */
-@media (max-width: 600px) {
-    body {
-        padding: 10px;
-    }
-    .app-logo {
-        max-width: 200px;
-        margin-bottom: 25px;
-    }
-    .quote-box {
-        padding: 20px 25px;
-        font-size: 16px;
-    }
-    .tabs {
-        flex-direction: column;
-        border-radius: 12px;
-    }
-    .tab-button {
-        border-bottom: 1px solid #eee;
-    }
-    .tab-button.active {
-        border-bottom: 1px solid #eee;
-        border-left: 4px solid #2193b0;
-    }
-    li {
-        font-size: 15px;
-    }
-}
-
 /* --- NEW CALCULATOR STYLES --- */
 .calculator-container {
     margin-bottom: 15px;
@@ -429,7 +400,34 @@ li:hover {
     border-bottom: none;
     margin-bottom: 20px;
 }
+
+/* --- Mobile Optimization (Consolidated) --- */
 @media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    .app-logo {
+        max-width: 200px;
+        margin-bottom: 25px;
+    }
+    .quote-box {
+        padding: 20px 25px;
+        font-size: 16px;
+    }
+    .tabs {
+        flex-direction: column;
+        border-radius: 12px;
+    }
+    .tab-button {
+        border-bottom: 1px solid #eee;
+    }
+    .tab-button.active {
+        border-bottom: 1px solid #eee;
+        border-left: 4px solid #2193b0;
+    }
+    li {
+        font-size: 15px;
+    }
     .form-grid {
         grid-template-columns: 1fr;
     }
