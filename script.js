@@ -9,6 +9,70 @@ document.addEventListener('DOMContentLoaded', function () {
     initExpandableItems();
     // Build the content for the Nutrition tab
     initFoodTab();
+
+    // --- NEW CALCULATOR LOGIC ---
+    const calculateBtn = document.getElementById('calculateBtn');
+    if (calculateBtn) { // Check if the button exists on the page
+        const resultsContainer = document.getElementById('resultsContainer');
+
+        const weightInput = document.getElementById('weight');
+        const heightInput = document.getElementById('height');
+        const ageInput = document.getElementById('age');
+        const genderSelect = document.getElementById('gender');
+        const activitySelect = document.getElementById('activity');
+        const goalSelect = document.getElementById('goal');
+
+        const caloriesResultEl = document.getElementById('caloriesResult');
+        const proteinResultEl = document.getElementById('proteinResult');
+        const carbsResultEl = document.getElementById('carbsResult');
+        const fatResultEl = document.getElementById('fatResult');
+
+        calculateBtn.addEventListener('click', () => {
+            const weight = parseFloat(weightInput.value);
+            const height = parseFloat(heightInput.value);
+            const age = parseInt(ageInput.value);
+            const gender = genderSelect.value;
+            const activityFactor = parseFloat(activitySelect.value);
+            const goal = goalSelect.value;
+
+            if (isNaN(weight) || isNaN(height) || isNaN(age) || weight <= 0 || height <= 0 || age <= 0) {
+                alert('Please enter valid numbers for weight, height, and age.');
+                return;
+            }
+
+            const weightKg = weight * 0.453592;
+            const heightCm = height * 2.54;
+
+            let bmr = (gender === 'male')
+                ? (10 * weightKg) + (6.25 * heightCm) - (5 * age) + 5
+                : (10 * weightKg) + (6.25 * heightCm) - (5 * age) - 161;
+
+            const tdee = bmr * activityFactor;
+
+            let targetCalories = tdee;
+            if (goal === 'cut') {
+                targetCalories -= 500;
+            } else if (goal === 'bulk') {
+                targetCalories += 300;
+            }
+
+            const proteinGrams = Math.round(weight);
+            const fatGrams = Math.round((targetCalories * 0.25) / 9);
+            const carbsGrams = Math.round((targetCalories - (proteinGrams * 4) - (fatGrams * 9)) / 4);
+
+            caloriesResultEl.textContent = Math.round(targetCalories).toLocaleString();
+            proteinResultEl.textContent = `${proteinGrams}g`;
+            carbsResultEl.textContent = `${carbsGrams}g`;
+            fatResultEl.textContent = `${fatGrams}g`;
+
+            resultsContainer.classList.add('visible');
+
+            const detailsElement = resultsContainer.closest('.details');
+            if (detailsElement && detailsElement.style.maxHeight) {
+                detailsElement.style.maxHeight = detailsElement.scrollHeight + "px";
+            }
+        });
+    }
 });
 
 /**
@@ -20,11 +84,9 @@ function initTabs() {
 
     tabButtons.forEach(btn => {
         btn.addEventListener('click', function () {
-            // Remove .active class from all buttons and content panels
             tabButtons.forEach(b => b.classList.remove('active'));
             tabContents.forEach(content => content.classList.remove('active'));
 
-            // Add .active class to the clicked button and its corresponding content panel
             this.classList.add('active');
             const targetId = this.getAttribute('data-target');
             const targetPanel = document.getElementById(targetId);
@@ -74,28 +136,20 @@ function displayDailyQuote() {
 
 /**
  * Sets up a single click handler on the main container to manage all expandable items.
- * This method (event delegation) works for both static and dynamically added content.
  */
 function initExpandableItems() {
     const container = document.querySelector('.app-container');
     if (!container) return;
 
     container.addEventListener('click', function(event) {
-        // Find the closest .exercise-header ancestor of the clicked element
         const header = event.target.closest('.exercise-header');
-        
-        // If the click was not on or inside a header, do nothing
-        if (!header) {
-            return;
-        }
+        if (!header) return;
 
         const detailsElement = header.nextElementSibling;
 
         if (detailsElement && detailsElement.classList.contains('details')) {
-            // Toggle a class on the header for CSS to handle the icon rotation
             header.classList.toggle('expanded');
             
-            // Animate the expansion using max-height
             if (detailsElement.style.maxHeight) {
                 detailsElement.style.maxHeight = null;
             } else {
@@ -106,22 +160,22 @@ function initExpandableItems() {
 }
 
 /**
- * Builds the HTML content for the Nutrition tab from the data in food_data.js
+ * MODIFIED: Appends the nutrition guide content to the Nutrition tab,
+ * after the calculator which is now hardcoded in index.html.
  */
 function initFoodTab() {
-    // Note: This function now uses the id "nutrition"
     const foodContainer = document.getElementById('nutrition');
     if (!foodContainer) return;
 
-    // --- 1. Visual Header Banner ---
+    const guideContainer = document.createElement('div');
+
     let content = `
-        <div class="nutrition-header">
+        <div class="nutrition-header" style="margin-top: 40px;">
             <h2>Nutrition Guide</h2>
             <p>Use these heuristics to build a balanced, healthy diet that fuels your goals.</p>
         </div>
     `;
 
-    // --- 2. General Heuristics with Icons ---
     content += '<h3>General Dietary Heuristics</h3>';
     content += '<div class="heuristics-container">';
     const icons = ["fa-bullseye", "fa-bullseye", "fa-tint", "fa-utensils", "fa-balance-scale"];
@@ -135,7 +189,6 @@ function initFoodTab() {
     });
     content += '</div>';
 
-    // --- 3. Protein Sources with Visualized Macros ---
     content += '<h3>Protein Sources</h3>';
     content += '<ul>';
     proteinSources.forEach(item => {
@@ -148,18 +201,9 @@ function initFoodTab() {
                 <div class="details">
                     <p><strong>Portion:</strong> ${item.portion}</p>
                     <div class="macro-stats">
-                        <div class="stat">
-                            <span class="stat-value">${item.protein}</span>
-                            <span class="stat-label">Protein</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-value">${item.fat}</span>
-                            <span class="stat-label">Fat</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-value">${item.calories}</span>
-                            <span class="stat-label">Calories</span>
-                        </div>
+                        <div class="stat"><span class="stat-value">${item.protein}</span><span class="stat-label">Protein</span></div>
+                        <div class="stat"><span class="stat-value">${item.fat}</span><span class="stat-label">Fat</span></div>
+                        <div class="stat"><span class="stat-value">${item.calories}</span><span class="stat-label">Calories</span></div>
                     </div>
                 </div>
             </li>
@@ -167,7 +211,6 @@ function initFoodTab() {
     });
     content += '</ul>';
 
-    // --- 4. Other Sources with Visualized Macros ---
     content += '<h3>Carbs, Fats & Produce</h3>';
     content += '<ul>';
     otherSources.forEach(item => {
@@ -180,18 +223,9 @@ function initFoodTab() {
                 <div class="details">
                     <p><strong>Portion:</strong> ${item.portion}</p>
                      <div class="macro-stats">
-                        <div class="stat">
-                            <span class="stat-value">${item.carbs}</span>
-                            <span class="stat-label">Carbs</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-value">${item.fat}</span>
-                            <span class="stat-label">Fat</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-value">${item.calories}</span>
-                            <span class="stat-label">Calories</span>
-                        </div>
+                        <div class="stat"><span class="stat-value">${item.carbs}</span><span class="stat-label">Carbs</span></div>
+                        <div class="stat"><span class="stat-value">${item.fat}</span><span class="stat-label">Fat</span></div>
+                        <div class="stat"><span class="stat-value">${item.calories}</span><span class="stat-label">Calories</span></div>
                     </div>
                 </div>
             </li>
@@ -199,8 +233,8 @@ function initFoodTab() {
     });
     content += '</ul>';
 
-    // Disclaimer
     content += `<p class="disclaimer">${disclaimerText}</p>`;
 
-    foodContainer.innerHTML = content;
+    guideContainer.innerHTML = content;
+    foodContainer.appendChild(guideContainer);
 }
