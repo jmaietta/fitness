@@ -18,7 +18,7 @@ const proteinSources = [
 
 const otherSources = [
   { name: "Rice, Pasta (Cooked)", portion: "1 Cupped Hand", carbs: "25-30g", fat: "<1g", calories: "120-150", image: "rice-pic.png" },
-  { name: "Fresh Bread", portion: "1 Slice", carbs: "15-20g", fat: "1-2g", calories: "80-110", image: "bread2-pic.png" },
+  { name: "Fresh Bread", portion: "1 Slice", carbs: "15-20g", fat: "1-2g", calories: "80-110", image: "bread3-pic.png" },
   { name: "Fruits (Apple, Banana)", portion: "1 Fist", carbs: "20-25g", fat: "<1g", calories: "90-120", image: "apple-pic.png" },
   { name: "Vegetables (Broccoli, etc.)", portion: "1 Fist", carbs: "5-10g", fat: "<1g", calories: "30-50", image: "rabes-pic.png" },
   { name: "Lettuce, Leafy Greens", portion: "2 Full Hands", carbs: "<5g", fat: "0g", calories: "<20", image: "greens-pic.png" },
