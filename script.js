@@ -198,6 +198,7 @@ function initFoodTab() {
         content += `
             <li>
                 <div class="exercise-header">
+                    <img src="${item.image}" alt="${item.name}" class="food-thumbnail">
                     <span class="exercise-name">${item.name}</span>
                     <span class="expand-icon">></span>
                 </div>
