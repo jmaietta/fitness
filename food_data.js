@@ -7,7 +7,7 @@ const generalHeuristics = [
 ];
 
 const proteinSources = [
-  { name: "Lean Beef, Bison, Elk", portion: "1 Palm-Sized Portion", protein: "25g", fat: "8-12g", calories: "180-220", image: "bison-pic.png" },
+  { name: "Lean Beef, Bison, Elk", portion: "1 Palm-Sized Portion", protein: "25g", fat: "8-12g", calories: "180-220", image: "bison2-pic.png" },
   { name: "Fatty Beef, Pork", portion: "1 Palm-Sized Portion", protein: "22g", fat: "15-20g", calories: "230-280", image: "beef-pic.png" },
   { name: "Chicken, Turkey Breast", portion: "1 Palm-Sized Portion", protein: "30g", fat: "4g", calories: "165", image: "chicken-pic.png" },
   { name: "Fish (Salmon, Cod)", portion: "1 Palm-Sized Portion", protein: "25g", fat: "10-15g", calories: "200-250", image: "salmon-pic.png" },
