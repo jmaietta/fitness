@@ -66,10 +66,13 @@ document.addEventListener('DOMContentLoaded', function () {
             fatResultEl.textContent = `${fatGrams}g`;
 
             resultsContainer.classList.add('visible');
-
-            const detailsElement = resultsContainer.closest('.details');
-            if (detailsElement && detailsElement.style.maxHeight) {
-                detailsElement.style.maxHeight = detailsElement.scrollHeight + "px";
+        });
+        
+        // Add event listener to close the overlay
+        resultsContainer.addEventListener('click', (event) => {
+            // Close if the click is on the overlay itself, not the card inside
+            if (event.target === resultsContainer) {
+                resultsContainer.classList.remove('visible');
             }
         });
     }
