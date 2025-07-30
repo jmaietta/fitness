@@ -245,7 +245,6 @@
                         <span class="expand-icon">></span>
                     </div>
                     <div class="details">
-                        <!-- Calculator Card -->
                         <div class="calculator-container">
                             <div class="form-grid">
                                 <div class="form-group">
@@ -289,34 +288,35 @@
                                 <i class="fa-solid fa-calculator"></i> Calculate
                             </button>
                         </div>
-
-                        <!-- Results Card -->
-                        <div class="results-container" id="resultsContainer">
-                            <h3>Your Daily Targets</h3>
-                            <div class="macro-stats">
-                                <div class="stat">
-                                    <span class="stat-value" id="caloriesResult">0</span>
-                                    <span class="stat-label">Calories</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-value" id="proteinResult">0g</span>
-                                    <span class="stat-label">Protein</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-value" id="carbsResult">0g</span>
-                                    <span class="stat-label">Carbs</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-value" id="fatResult">0g</span>
-                                    <span class="stat-label">Fat</span>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </li>
             </ul>
         </div>
+    </div>
 
+    <!-- Results Modal Overlay -->
+    <div class="results-container" id="resultsContainer">
+        <div class="results-card">
+            <h3>Your Daily Targets</h3>
+            <div class="macro-stats">
+                <div class="stat">
+                    <span class="stat-value" id="caloriesResult">0</span>
+                    <span class="stat-label">Calories</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="proteinResult">0g</span>
+                    <span class="stat-label">Protein</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="carbsResult">0g</span>
+                    <span class="stat-label">Carbs</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="fatResult">0g</span>
+                    <span class="stat-label">Fat</span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="food_data.js"></script>
