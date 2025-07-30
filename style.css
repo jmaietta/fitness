@@ -136,6 +136,7 @@ li:hover {
     font-weight: 500;
     font-size: 18px;
     color: #2c3e50;
+    flex-grow: 1;
 }
 
 .expand-icon {
@@ -324,7 +325,7 @@ li:hover {
     line-height: 1.6;
 }
 
-/* --- NEW CALCULATOR STYLES --- */
+/* --- NEW CALCULATOR & THUMBNAIL STYLES --- */
 .calculator-container {
     margin-bottom: 15px;
     overflow: hidden;
@@ -424,6 +425,15 @@ li:hover {
     border-bottom: none;
     margin-bottom: 20px;
     color: #34495e;
+}
+
+.food-thumbnail {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 15px;
+    flex-shrink: 0;
 }
 
 /* --- Mobile Optimization (Consolidated) --- */
