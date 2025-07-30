@@ -17,13 +17,13 @@ const proteinSources = [
 ];
 
 const otherSources = [
-  { name: "Rice, Pasta (Cooked)", portion: "1 Cupped Hand", carbs: "25-30g", fat: "<1g", calories: "120-150" },
-  { name: "Fresh Bread", portion: "1 Slice", carbs: "15-20g", fat: "1-2g", calories: "80-110" },
-  { name: "Fruits (Apple, Banana)", portion: "1 Fist", carbs: "20-25g", fat: "<1g", calories: "90-120" },
-  { name: "Vegetables (Broccoli, etc.)", portion: "1 Fist", carbs: "5-10g", fat: "<1g", calories: "30-50" },
-  { name: "Lettuce, Leafy Greens", portion: "2 Full Hands", carbs: "<5g", fat: "0g", calories: "<20" },
-  { name: "Natural Peanut Butter", portion: "1 Thumb", carbs: "3g", fat: "8g", calories: "100" },
-  { name: "Olive Oil, Butter", portion: "1 Thumb", carbs: "0g", fat: "14g", calories: "120" }
+  { name: "Rice, Pasta (Cooked)", portion: "1 Cupped Hand", carbs: "25-30g", fat: "<1g", calories: "120-150", image: "rice-pic.png" },
+  { name: "Fresh Bread", portion: "1 Slice", carbs: "15-20g", fat: "1-2g", calories: "80-110", image: "bread-pic.png" },
+  { name: "Fruits (Apple, Banana)", portion: "1 Fist", carbs: "20-25g", fat: "<1g", calories: "90-120", image: "apple-pic.png" },
+  { name: "Vegetables (Broccoli, etc.)", portion: "1 Fist", carbs: "5-10g", fat: "<1g", calories: "30-50", image: "rabes-pic.png" },
+  { name: "Lettuce, Leafy Greens", portion: "2 Full Hands", carbs: "<5g", fat: "0g", calories: "<20", image: "greens-pic.png" },
+  { name: "Natural Peanut Butter", portion: "1 Thumb", carbs: "3g", fat: "8g", calories: "100", image: "peanut-butter-pic.png" },
+  { name: "Olive Oil, Butter", portion: "1 Thumb", carbs: "0g", fat: "14g", calories: "120", image: "olive-oil-pic.png" }
 ];
 
 const disclaimerText = "The information provided in this application is for general informational purposes only. It is not intended as medical advice and should not be used for diagnosis or treatment. Please consult with a qualified healthcare professional or registered dietitian before making any changes to your diet or exercise routine.";
