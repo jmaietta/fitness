@@ -125,10 +125,27 @@ li:hover {
 /* Styles for expandable details */
 .exercise-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    padding: 15px 20px;
+    padding: 18px 20px;
+    gap: 15px;
+    min-height: 60px;
+}
+
+.exercise-thumbnail {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.exercise-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .exercise-name {
@@ -136,7 +153,13 @@ li:hover {
     font-weight: 500;
     font-size: 18px;
     color: #2c3e50;
-    flex-grow: 1;
+    line-height: 1.2;
+}
+
+.exercise-reps {
+    font-size: 14px;
+    color: #7f8c8d;
+    font-weight: 500;
 }
 
 .expand-icon {
@@ -144,6 +167,9 @@ li:hover {
     font-weight: bold;
     color: #2193b0;
     transition: transform 0.3s ease;
+    flex-shrink: 0;
+    padding: 8px;
+    margin: -8px;
 }
 
 /* Rotating the icon when expanded */
@@ -661,6 +687,32 @@ li:hover {
     }
     .results-card-body {
         padding: 25px 20px;
+    }
+    
+    /* Mobile exercise layout adjustments */
+    .exercise-header {
+        padding: 16px 18px;
+        gap: 12px;
+        min-height: 56px;
+    }
+    
+    .exercise-thumbnail {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .exercise-name {
+        font-size: 17px;
+    }
+    
+    .exercise-reps {
+        font-size: 13px;
+    }
+    
+    .expand-icon {
+        font-size: 18px;
+        padding: 10px;
+        margin: -10px;
     }
     
     /* Mobile tooltip adjustments */
