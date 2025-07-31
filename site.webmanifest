@@ -30,35 +30,35 @@
             "sizes": "1080x2340",
             "type": "image/jpeg",
             "form_factor": "narrow",
-            "label": "Detailed exercise view with instructions"
+            "label": "Cardio exercise view with thumbnail photos"
         },
         {
             "src": "/screenshots_3.jpg",
             "sizes": "1080x2340",
             "type": "image/jpeg",
             "form_factor": "narrow",
-            "label": "Cardio routine screen"
+            "label": "Cardio detail screen high knees exercise"
         },
         {
             "src": "/screenshots_4.jpg",
             "sizes": "1080x2340",
             "type": "image/jpeg",
             "form_factor": "narrow",
-            "label": "Detailed nutrition info for food items"
+            "label": "Daily Nutrition Guide with Daily Macro Calculator and tooltip"
         },
         {
             "src": "/screenshots_5.jpg",
             "sizes": "1080x2340",
             "type": "image/jpeg",
             "form_factor": "narrow",
-            "label": "Lists of different food types"
+            "label": "Daily macro targets detail view"
         },
         {
             "src": "/screenshots_6.jpg",
             "sizes": "1080x2340",
             "type": "image/jpeg",
             "form_factor": "narrow",
-            "label": "Helpful dietary tips and heuristics"
+            "label": "Protein detail of fish with image"
         }
     ],
     "shortcuts": [
