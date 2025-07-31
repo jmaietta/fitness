@@ -241,7 +241,14 @@
             <ul>
                 <li>
                     <div class="exercise-header">
-                        <span class="exercise-name">Daily Macro Calculator</span>
+                        <span class="exercise-name">
+                            Daily Macro Calculator
+                            <button class="tooltip-trigger" 
+                                    aria-label="What are macros and how does this calculator work?"
+                                    data-tooltip="true">
+                                <i class="fa-solid fa-circle-info"></i>
+                            </button>
+                        </span>
                         <span class="expand-icon">></span>
                     </div>
                     <div class="details">
@@ -319,11 +326,17 @@
         </div>
     </div>
 
+    <!-- Tooltip container (dynamically populated) -->
+    <div id="tooltip" class="tooltip" role="tooltip"></div>
+
     <script src="food_data.js"></script>
     <script src="script.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Initialize tooltips
+            initTooltips();
+            
             // Select all images that should be zoomable
             const zoomableImages = document.querySelectorAll('.exercise-photo, .exercise-images img');
 
@@ -360,6 +373,162 @@
                 });
             });
         });
+
+        /**
+         * Initialize tooltip functionality following best practices
+         */
+        function initTooltips() {
+            const tooltip = document.getElementById('tooltip');
+            const triggers = document.querySelectorAll('[data-tooltip="true"]');
+            let hideTimeout;
+            let currentTrigger = null;
+            
+            const tooltipContent = {
+                default: `
+                    <div class="tooltip-header">
+                        <h4>What Are Macros?</h4>
+                    </div>
+                    <div class="tooltip-body">
+                        <p><strong>Macronutrients</strong> are the three main nutrients your body needs in large amounts:</p>
+                        <ul>
+                            <li><strong>Protein:</strong> Builds and repairs muscle tissue</li>
+                            <li><strong>Carbohydrates:</strong> Provides energy for workouts and daily activities</li>
+                            <li><strong>Fats:</strong> Supports hormone production and brain function</li>
+                        </ul>
+                        <p>This calculator determines your personalized daily targets based on your body composition, activity level, and fitness goals.</p>
+                    </div>
+                `
+            };
+
+            triggers.forEach(trigger => {
+                // Add ARIA attributes for accessibility
+                const tooltipId = 'tooltip-' + Math.random().toString(36).substr(2, 9);
+                trigger.setAttribute('aria-describedby', tooltipId);
+                
+                // Mouse events for desktop
+                trigger.addEventListener('mouseenter', (e) => {
+                    clearTimeout(hideTimeout);
+                    showTooltip(e, tooltip, tooltipContent.default);
+                    currentTrigger = trigger;
+                });
+                
+                trigger.addEventListener('mouseleave', (e) => {
+                    // Only hide if not moving to tooltip
+                    hideTimeout = setTimeout(() => {
+                        if (!tooltip.matches(':hover') && !trigger.matches(':hover')) {
+                            hideTooltip(tooltip);
+                            currentTrigger = null;
+                        }
+                    }, 100);
+                });
+                
+                // Touch events for mobile
+                trigger.addEventListener('touchstart', (e) => {
+                    e.preventDefault();
+                    if (tooltip.classList.contains('visible')) {
+                        hideTooltip(tooltip);
+                        currentTrigger = null;
+                    } else {
+                        showTooltip(e, tooltip, tooltipContent.default);
+                        currentTrigger = trigger;
+                    }
+                });
+                
+                // Focus events for keyboard accessibility
+                trigger.addEventListener('focus', (e) => {
+                    clearTimeout(hideTimeout);
+                    showTooltip(e, tooltip, tooltipContent.default);
+                    currentTrigger = trigger;
+                });
+                
+                trigger.addEventListener('blur', () => {
+                    hideTimeout = setTimeout(() => {
+                        hideTooltip(tooltip);
+                        currentTrigger = null;
+                    }, 100);
+                });
+            });
+
+            // Allow hovering over tooltip itself
+            tooltip.addEventListener('mouseenter', () => {
+                clearTimeout(hideTimeout);
+            });
+            
+            tooltip.addEventListener('mouseleave', () => {
+                hideTimeout = setTimeout(() => {
+                    if (currentTrigger && !currentTrigger.matches(':hover')) {
+                        hideTooltip(tooltip);
+                        currentTrigger = null;
+                    }
+                }, 100);
+            });
+
+            // Hide tooltip when clicking elsewhere
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('[data-tooltip="true"]') && !e.target.closest('.tooltip')) {
+                    hideTooltip(tooltip);
+                    currentTrigger = null;
+                }
+            });
+
+            // Hide tooltip on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    hideTooltip(tooltip);
+                    currentTrigger = null;
+                }
+            });
+        }
+
+        function showTooltip(event, tooltip, content) {
+            tooltip.innerHTML = content;
+            tooltip.style.display = 'block';
+            
+            // Position the tooltip
+            positionTooltip(event.target, tooltip);
+            
+            // Animate in
+            requestAnimationFrame(() => {
+                tooltip.classList.add('visible');
+            });
+        }
+
+        function hideTooltip(tooltip) {
+            tooltip.classList.remove('visible');
+            setTimeout(() => {
+                if (!tooltip.classList.contains('visible')) {
+                    tooltip.style.display = 'none';
+                }
+            }, 200);
+        }
+
+        function positionTooltip(trigger, tooltip) {
+            const triggerRect = trigger.getBoundingClientRect();
+            const tooltipRect = tooltip.getBoundingClientRect();
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+            
+            let left = triggerRect.left + (triggerRect.width / 2) - (tooltipRect.width / 2);
+            let top = triggerRect.top - tooltipRect.height - 10;
+            
+            // Adjust if tooltip goes off-screen horizontally
+            if (left < 10) {
+                left = 10;
+            } else if (left + tooltipRect.width > viewportWidth - 10) {
+                left = viewportWidth - tooltipRect.width - 10;
+            }
+            
+            // Adjust if tooltip goes off-screen vertically (show below instead)
+            if (top < 10) {
+                top = triggerRect.bottom + 10;
+                tooltip.classList.add('tooltip-below');
+            } else {
+                tooltip.classList.remove('tooltip-below');
+            }
+            
+            tooltip.style.left = left + 'px';
+            tooltip.style.top = top + 'px';
+        }
     </script>
     
     <script>
