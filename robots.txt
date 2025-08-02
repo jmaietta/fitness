@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Allow: /favicon-32x32.png
+Allow: /favicon-16x16.png
+Allow: /apple-touch-icon.png
+Allow: /forge-logo.png
+
+Sitemap: https://www.forgebodyfit.com/sitemap.xml
