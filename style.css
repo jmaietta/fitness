@@ -125,6 +125,18 @@ h3 {
     margin: 0;
 }
 
+/* Subtle shadow under quote box when visible */
+.quote-box::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 10%;
+    right: 10%;
+    height: 20px;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
 /* ==========================================================================
    Tabs Navigation
    ========================================================================== */
@@ -174,6 +186,11 @@ h3 {
     outline-offset: -2px;
 }
 
+/* Active/pressed state for tabs */
+.tab-button:active {
+    transform: scale(0.98);
+}
+
 /* Tab content panels */
 .tab-content.active {
     display: block;
@@ -221,6 +238,11 @@ li:hover {
     background-color: var(--color-surface-alt);
 }
 
+/* Active/pressed state for exercise headers */
+.exercise-header:active {
+    background-color: #f0f0f0;
+}
+
 .exercise-header:focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: -2px;
@@ -257,6 +279,7 @@ li:hover {
     font-weight: 500;
 }
 
+/* Expand icon - supports both > character and Font Awesome icon */
 .expand-icon {
     font-size: 20px;
     font-weight: bold;
@@ -265,9 +288,20 @@ li:hover {
     flex-shrink: 0;
     padding: 8px;
     margin: -8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
 }
 
-.exercise-header.expanded .expand-icon {
+/* Font Awesome icon inside expand-icon */
+.expand-icon i {
+    font-size: 14px;
+    transition: transform var(--transition-base);
+}
+
+.exercise-header.expanded .expand-icon,
+.exercise-header.expanded .expand-icon i {
     transform: rotate(90deg);
 }
 
@@ -589,8 +623,24 @@ li:hover {
     box-shadow: 0 6px 20px rgba(33, 147, 176, 0.3);
 }
 
+/* Active/pressed state */
 .calculate-btn:active {
     transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(33, 147, 176, 0.2);
+}
+
+/* Loading state for calculate button */
+.calculate-btn.loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.calculate-btn.loading i {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
 
 /* ==========================================================================
@@ -668,6 +718,18 @@ li:hover {
     padding: 30px;
 }
 
+/* Close hint for modal */
+.results-card-body::after {
+    content: 'Tap outside to close';
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: var(--color-text-muted);
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--color-border-light);
+}
+
 .food-thumbnail {
     width: 50px;
     height: 50px;
@@ -703,6 +765,11 @@ li:hover {
 .tooltip-trigger:focus {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
+}
+
+/* Active state for tooltip trigger */
+.tooltip-trigger:active {
+    transform: scale(0.95);
 }
 
 .tooltip {
@@ -805,7 +872,11 @@ li:hover {
     .exercise-images img:hover,
     .stat:hover,
     .calculate-btn:hover,
-    .tooltip-trigger:hover {
+    .tooltip-trigger:hover,
+    .tab-button:active,
+    .exercise-header:active,
+    .calculate-btn:active,
+    .tooltip-trigger:active {
         transform: none;
     }
     
