@@ -32,383 +32,312 @@
     <link rel="manifest" href="site.webmanifest">
 </head>
 <body>
-    <main class="app-container">
+    <div class="app-container">
         
-        <img src="forge-logo.png" alt="Forge Fitness - Home" class="app-logo">
+        <img src="forge-logo.png" alt="Forge Logo" class="app-logo">
 
-        <div id="quote-box" class="quote-box" role="complementary" aria-label="Motivational quote"></div>
+        <div id="quote-box" class="quote-box"></div>
 
-        <!-- Navigation Tabs -->
-        <nav class="tabs" role="tablist" aria-label="Workout categories">
-            <button class="tab-button active" data-target="stretching" role="tab" aria-selected="true" aria-controls="stretching" id="tab-stretching">
-                <i class="fa-solid fa-child-reaching" aria-hidden="true"></i> Stretching
-            </button>
-            <button class="tab-button" data-target="cardio" role="tab" aria-selected="false" aria-controls="cardio" id="tab-cardio">
-                <i class="fa-solid fa-person-running" aria-hidden="true"></i> Cardio
-            </button>
-            <button class="tab-button" data-target="resistance" role="tab" aria-selected="false" aria-controls="resistance" id="tab-resistance">
-                <i class="fa-solid fa-dumbbell" aria-hidden="true"></i> Resistance
-            </button>
-            <button class="tab-button" data-target="nutrition" role="tab" aria-selected="false" aria-controls="nutrition" id="tab-nutrition">
-                <i class="fa-solid fa-utensils" aria-hidden="true"></i> Nutrition
-            </button>
-        </nav>
+        <div class="tabs">
+            <button class="tab-button active" data-target="stretching"><i class="fa-solid fa-child-reaching"></i> Stretching</button>
+            <button class="tab-button" data-target="cardio"><i class="fa-solid fa-person-running"></i> Cardio</button>
+            <button class="tab-button" data-target="resistance"><i class="fa-solid fa-dumbbell"></i> Resistance</button>
+            <button class="tab-button" data-target="nutrition"><i class="fa-solid fa-utensils"></i> Nutrition</button>
+        </div>
 
-        <!-- Stretching Section -->
-        <section id="stretching" class="tab-content active" role="tabpanel" aria-labelledby="tab-stretching">
-            <header class="section-header">
+        <div id="stretching" class="tab-content active">
+            <div class="nutrition-header">
                 <h2>Stretching Routine</h2>
                 <p>Improve your flexibility, reduce muscle tension, and prevent injuries with these essential stretches.</p>
-            </header>
-            <ul role="list">
+            </div>
+            <ul>
                 <li>
-                    <div class="exercise-header" role="button" tabindex="0" aria-expanded="false">
-                        <img src="neck-stretch.png" alt="" class="exercise-thumbnail" loading="lazy">
+                    <div class="exercise-header">
+                        <img src="neck-stretch.png" alt="Neck stretch" class="exercise-thumbnail" loading="lazy">
                         <div class="exercise-info">
                             <span class="exercise-name">Neck Stretch</span>
                             <span class="exercise-reps">2 sets • 15-second hold</span>
                         </div>
-                        <span class="expand-icon" aria-hidden="true">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </span>
+                        <span class="expand-icon">></span>
                     </div>
-                    <div class="details" hidden>
+                    <div class="details">
                         <p>Gently tilt your head, bringing your ear toward your shoulder until you feel a light stretch.</p>
                         <img src="neck-stretch.png" alt="Neck stretch demonstration" class="exercise-photo" loading="lazy">
                     </div>
                 </li>
                 <li>
-                    <div class="exercise-header" role="button" tabindex="0" aria-expanded="false">
-                        <img src="shoulder-stretch.png" alt="" class="exercise-thumbnail" loading="lazy">
+                    <div class="exercise-header">
+                        <img src="shoulder-stretch.png" alt="Shoulder stretch" class="exercise-thumbnail" loading="lazy">
                         <div class="exercise-info">
                             <span class="exercise-name">Shoulder Stretch</span>
                             <span class="exercise-reps">2 sets • 15-second hold per side</span>
                         </div>
-                        <span class="expand-icon" aria-hidden="true">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </span>
+                        <span class="expand-icon">></span>
                     </div>
-                    <div class="details" hidden>
+                    <div class="details">
                         <p>Cross one arm over your chest and use the other arm to gently pull it closer to your body.</p>
                         <img src="shoulder-stretch.png" alt="Shoulder stretch demonstration" class="exercise-photo" loading="lazy">
                     </div>
                 </li>
                 <li>
-                    <div class="exercise-header" role="button" tabindex="0" aria-expanded="false">
-                        <img src="hamstring-stretch.png" alt="" class="exercise-thumbnail" loading="lazy">
+                    <div class="exercise-header">
+                        <img src="hamstring-stretch.png" alt="Hamstring stretch" class="exercise-thumbnail" loading="lazy">
                         <div class="exercise-info">
                             <span class="exercise-name">Hamstring Stretch</span>
                             <span class="exercise-reps">2 sets • 30-second hold per leg</span>
                         </div>
-                        <span class="expand-icon" aria-hidden="true">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </span>
+                        <span class="expand-icon">></span>
                     </div>
-                    <div class="details" hidden>
+                    <div class="details">
                         <p>Sit on the floor with one leg extended, the other bent. Lean forward over the straight leg.</p>
                         <img src="hamstring-stretch.png" alt="Hamstring stretch demonstration" class="exercise-photo" loading="lazy">
                     </div>
                 </li>
-                <li>
-                    <div class="exercise-header" role="button" tabindex="0" aria-expanded="false">
-                        <img src="quad-stretch.png" alt="" class="exercise-thumbnail" loading="lazy">
+                 <li>
+                    <div class="exercise-header">
+                        <img src="quad-stretch.png" alt="Quad stretch" class="exercise-thumbnail" loading="lazy">
                         <div class="exercise-info">
                             <span class="exercise-name">Quad Stretch</span>
                             <span class="exercise-reps">2 sets • 30-second hold per leg</span>
                         </div>
-                        <span class="expand-icon" aria-hidden="true">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </span>
+                        <span class="expand-icon">></span>
                     </div>
-                    <div class="details" hidden>
+                    <div class="details">
                         <p>While standing, hold onto a support, grab your ankle and gently pull your heel towards your glute.</p>
                         <img src="quad-stretch.png" alt="Quad stretch demonstration" class="exercise-photo" loading="lazy">
                     </div>
                 </li>
                 <li>
-                    <div class="exercise-header" role="button" tabindex="0" aria-expanded="false">
-                        <img src="calf-stretch.png" alt="" class="exercise-thumbnail" loading="lazy">
+                    <div class="exercise-header">
+                        <img src="calf-stretch.png" alt="Calf stretch" class="exercise-thumbnail" loading="lazy">
                         <div class="exercise-info">
                             <span class="exercise-name">Calf Stretch</span>
                             <span class="exercise-reps">2 sets • 30-second hold per leg</span>
                         </div>
-                        <span class="expand-icon" aria-hidden="true">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </span>
+                        <span class="expand-icon">></span>
                     </div>
-                    <div class="details" hidden>
+                    <div class="details">
                         <p>Stand facing a wall with one foot forward. Lean into the wall, keeping your back leg straight.</p>
                         <img src="calf-stretch.png" alt="Calf stretch demonstration" class="exercise-photo" loading="lazy">
                     </div>
                 </li>
             </ul>
-        </section>
+        </div>
 
-        <!-- Cardio Section -->
-        <section id="cardio" class="tab-content" role="tabpanel" aria-labelledby="tab-cardio" hidden>
-            <header class="section-header">
+        <div id="cardio" class="tab-content">
+            <div class="nutrition-header">
                 <h2>Cardio Routine</h2>
                 <p>Get your heart rate up and improve your cardiovascular endurance with these effective exercises.</p>
-            </header>
-            <ul role="list">
+            </div>
+            <ul>
                 <li>
-                    <div class="exercise-header" role="button" tabindex="0" aria-expanded="false">
-                        <img src="jumping-jacks.png" alt="" class="exercise-thumbnail" loading="lazy">
+                    <div class="exercise-header">
+                        <img src="jumping-jacks.png" alt="Jumping Jacks" class="exercise-thumbnail" loading="lazy">
                         <div class="exercise-info">
                             <span class="exercise-name">Jumping Jacks</span>
                             <span class="exercise-reps">3 sets • 30 seconds</span>
                         </div>
-                        <span class="expand-icon" aria-hidden="true">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </span>
+                        <span class="expand-icon">></span>
                     </div>
-                    <div class="details" hidden>
+                    <div class="details">
                         <p>A full-body exercise. Jump while spreading your legs and bringing your arms overhead.</p>
                         <img src="jumping-jacks.png" alt="Jumping Jacks demonstration" class="exercise-photo" loading="lazy">
                     </div>
                 </li>
                 <li>
-                    <div class="exercise-header" role="button" tabindex="0" aria-expanded="false">
-                        <img src="burpee.png" alt="" class="exercise-thumbnail" loading="lazy">
+                    <div class="exercise-header">
+                        <img src="burpee.png" alt="Burpees" class="exercise-thumbnail" loading="lazy">
                         <div class="exercise-info">
                             <span class="exercise-name">Burpees</span>
                             <span class="exercise-reps">3 sets • 10 reps</span>
                         </div>
-                        <span class="expand-icon" aria-hidden="true">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </span>
+                        <span class="expand-icon">></span>
                     </div>
-                    <div class="details" hidden>
+                    <div class="details">
                         <p>A challenging full-body move: squat, kick legs back to a plank, return to squat, and jump up.</p>
                         <img src="burpee.png" alt="Burpee sequence demonstration" class="exercise-photo" loading="lazy">
                     </div>
                 </li>
                 <li>
-                    <div class="exercise-header" role="button" tabindex="0" aria-expanded="false">
-                        <img src="high-knees.png" alt="" class="exercise-thumbnail" loading="lazy">
+                    <div class="exercise-header">
+                        <img src="high-knees.png" alt="High Knees" class="exercise-thumbnail" loading="lazy">
                         <div class="exercise-info">
                             <span class="exercise-name">High Knees</span>
                             <span class="exercise-reps">3 sets • 30 seconds</span>
                         </div>
-                        <span class="expand-icon" aria-hidden="true">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </span>
+                        <span class="expand-icon">></span>
                     </div>
-                    <div class="details" hidden>
+                    <div class="details">
                         <p>Run in place, bringing your knees up towards your chest as high as possible.</p>
                         <img src="high-knees.png" alt="High Knees demonstration" class="exercise-photo" loading="lazy">
                     </div>
                 </li>
                 <li>
-                    <div class="exercise-header" role="button" tabindex="0" aria-expanded="false">
-                        <img src="mountain-climbers.png" alt="" class="exercise-thumbnail" loading="lazy">
+                    <div class="exercise-header">
+                        <img src="mountain-climbers.png" alt="Mountain Climbers" class="exercise-thumbnail" loading="lazy">
                         <div class="exercise-info">
                             <span class="exercise-name">Mountain Climbers</span>
                             <span class="exercise-reps">3 sets • 30 seconds</span>
                         </div>
-                        <span class="expand-icon" aria-hidden="true">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </span>
+                        <span class="expand-icon">></span>
                     </div>
-                    <div class="details" hidden>
+                    <div class="details">
                         <p>From a plank position, alternate bringing each knee towards your chest, as if running.</p>
                         <img src="mountain-climbers.png" alt="Mountain Climbers demonstration" class="exercise-photo" loading="lazy">
                     </div>
                 </li>
             </ul>
-        </section>
+        </div>
 
-        <!-- Resistance Section -->
-        <section id="resistance" class="tab-content" role="tabpanel" aria-labelledby="tab-resistance" hidden>
-            <header class="section-header">
+        <div id="resistance" class="tab-content">
+            <div class="nutrition-header">
                 <h2>Resistance Routine</h2>
                 <p>Build strength and tone your muscles using these foundational bodyweight resistance exercises.</p>
-            </header>
-            <ul role="list">
+            </div>
+            <ul>
                 <li>
-                    <div class="exercise-header" role="button" tabindex="0" aria-expanded="false">
-                        <img src="push-up.png" alt="" class="exercise-thumbnail" loading="lazy">
+                    <div class="exercise-header">
+                        <img src="push-up.png" alt="Push-ups" class="exercise-thumbnail" loading="lazy">
                         <div class="exercise-info">
                             <span class="exercise-name">Push-ups</span>
                             <span class="exercise-reps">3 sets • 10 reps</span>
                         </div>
-                        <span class="expand-icon" aria-hidden="true">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </span>
+                        <span class="expand-icon">></span>
                     </div>
-                    <div class="details" hidden>
+                    <div class="details">
                         <p>Lower your body until your chest nearly touches the floor, keeping your back straight.</p>
                         <img src="push-up.png" alt="Push-up demonstration" class="exercise-photo" loading="lazy">
                     </div>
                 </li>
                 <li>
-                    <div class="exercise-header" role="button" tabindex="0" aria-expanded="false">
-                        <img src="squats.png" alt="" class="exercise-thumbnail" loading="lazy">
+                    <div class="exercise-header">
+                        <img src="squats.png" alt="Squats" class="exercise-thumbnail" loading="lazy">
                         <div class="exercise-info">
                             <span class="exercise-name">Squats</span>
                             <span class="exercise-reps">3 sets • 15 reps</span>
                         </div>
-                        <span class="expand-icon" aria-hidden="true">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </span>
+                        <span class="expand-icon">></span>
                     </div>
-                    <div class="details" hidden>
+                    <div class="details">
                         <p>Lower your hips as if sitting in a chair, keeping your chest up and back straight.</p>
                         <img src="squats.png" alt="Squats demonstration" class="exercise-photo" loading="lazy">
                     </div>
                 </li>
                 <li>
-                    <div class="exercise-header" role="button" tabindex="0" aria-expanded="false">
-                        <img src="lunges.png" alt="" class="exercise-thumbnail" loading="lazy">
+                    <div class="exercise-header">
+                        <img src="lunges.png" alt="Lunges" class="exercise-thumbnail" loading="lazy">
                         <div class="exercise-info">
                             <span class="exercise-name">Lunges</span>
                             <span class="exercise-reps">3 sets • 10 reps each leg</span>
                         </div>
-                        <span class="expand-icon" aria-hidden="true">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </span>
+                        <span class="expand-icon">></span>
                     </div>
-                    <div class="details" hidden>
+                    <div class="details">
                         <p>Step forward with one leg and lower your hips until both knees are bent at a 90-degree angle.</p>
                         <img src="lunges.png" alt="Lunges demonstration" class="exercise-photo" loading="lazy">
                     </div>
                 </li>
                 <li>
-                    <div class="exercise-header" role="button" tabindex="0" aria-expanded="false">
-                        <img src="plank.png" alt="" class="exercise-thumbnail" loading="lazy">
+                    <div class="exercise-header">
+                        <img src="plank.png" alt="Plank" class="exercise-thumbnail" loading="lazy">
                         <div class="exercise-info">
                             <span class="exercise-name">Plank</span>
                             <span class="exercise-reps">3 sets • 30-second hold</span>
                         </div>
-                        <span class="expand-icon" aria-hidden="true">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </span>
+                        <span class="expand-icon">></span>
                     </div>
-                    <div class="details" hidden>
+                    <div class="details">
                         <p>Hold a push-up position, keeping your body in a straight line from head to heels.</p>
                         <img src="plank.png" alt="Plank demonstration" class="exercise-photo" loading="lazy">
                     </div>
                 </li>
                 <li>
-                    <div class="exercise-header" role="button" tabindex="0" aria-expanded="false">
-                        <img src="glute-bridge.png" alt="" class="exercise-thumbnail" loading="lazy">
+                    <div class="exercise-header">
+                        <img src="glute-bridge.png" alt="Glute Bridges" class="exercise-thumbnail" loading="lazy">
                         <div class="exercise-info">
                             <span class="exercise-name">Glute Bridges</span>
                             <span class="exercise-reps">3 sets • 15 reps</span>
                         </div>
-                        <span class="expand-icon" aria-hidden="true">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </span>
+                        <span class="expand-icon">></span>
                     </div>
-                    <div class="details" hidden>
+                    <div class="details">
                         <p>Lie on your back, lift your hips off the floor until your body forms a straight line.</p>
                         <img src="glute-bridge.png" alt="Glute Bridges demonstration" class="exercise-photo" loading="lazy">
                     </div>
                 </li>
                 <li>
-                    <div class="exercise-header" role="button" tabindex="0" aria-expanded="false">
-                        <img src="chair-dip.png" alt="" class="exercise-thumbnail" loading="lazy">
+                    <div class="exercise-header">
+                        <img src="chair-dip.png" alt="Chair Dips" class="exercise-thumbnail" loading="lazy">
                         <div class="exercise-info">
                             <span class="exercise-name">Chair Dips</span>
                             <span class="exercise-reps">3 sets • 12 reps</span>
                         </div>
-                        <span class="expand-icon" aria-hidden="true">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </span>
+                        <span class="expand-icon">></span>
                     </div>
-                    <div class="details" hidden>
+                    <div class="details">
                         <p>Using a sturdy chair, lower your body down with your arms until your elbows are at 90 degrees.</p>
                         <img src="chair-dip.png" alt="Chair Dips demonstration" class="exercise-photo" loading="lazy">
                     </div>
                 </li>
-                <li>
-                    <div class="exercise-header" role="button" tabindex="0" aria-expanded="false">
-                        <img src="calf-raises.png" alt="" class="exercise-thumbnail" loading="lazy">
+                 <li>
+                    <div class="exercise-header">
+                        <img src="calf-raises.png" alt="Calf Raises" class="exercise-thumbnail" loading="lazy">
                         <div class="exercise-info">
                             <span class="exercise-name">Calf Raises</span>
                             <span class="exercise-reps">3 sets • 20 reps</span>
                         </div>
-                        <span class="expand-icon" aria-hidden="true">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </span>
+                        <span class="expand-icon">></span>
                     </div>
-                    <div class="details" hidden>
+                    <div class="details">
                         <p>Stand with feet flat on the floor, then push through the balls of your feet to raise your heels.</p>
                         <img src="calf-raises.png" alt="Calf Raises demonstration" class="exercise-photo" loading="lazy">
                     </div>
                 </li>
                 <li>
-                    <div class="exercise-header" role="button" tabindex="0" aria-expanded="false">
-                        <img src="Supermans.png" alt="" class="exercise-thumbnail" loading="lazy">
+                    <div class="exercise-header">
+                        <img src="Supermans.png" alt="Supermans" class="exercise-thumbnail" loading="lazy">
                         <div class="exercise-info">
                             <span class="exercise-name">Supermans</span>
                             <span class="exercise-reps">3 sets • 12 reps</span>
                         </div>
-                        <span class="expand-icon" aria-hidden="true">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </span>
+                        <span class="expand-icon">></span>
                     </div>
-                    <div class="details" hidden>
+                    <div class="details">
                         <p>Lie on your stomach and simultaneously lift your arms, legs, and chest off the floor.</p>
                         <img src="Supermans.png" alt="Supermans demonstration" class="exercise-photo" loading="lazy">
                     </div>
                 </li>
             </ul>
-        </section>
+        </div>
 
-        <!-- Nutrition Section -->
-        <section id="nutrition" class="tab-content" role="tabpanel" aria-labelledby="tab-nutrition" hidden>
-            <ul role="list">
+        <div id="nutrition" class="tab-content">
+            <ul>
                 <li>
-                    <div class="exercise-header" role="button" tabindex="0" aria-expanded="false">
+                    <div class="exercise-header">
                         <span class="exercise-name">
                             Daily Macro Calculator
                             <button class="tooltip-trigger" 
-                                    type="button"
                                     aria-label="What are macros and how does this calculator work?"
                                     data-tooltip="true">
-                                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                                <i class="fa-solid fa-circle-info"></i>
                             </button>
                         </span>
-                        <span class="expand-icon" aria-hidden="true">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </span>
+                        <span class="expand-icon">></span>
                     </div>
-                    <div class="details" hidden>
+                    <div class="details">
                         <div class="calculator-container">
                             <div class="form-grid">
                                 <div class="form-group">
                                     <label for="weight">Weight (lbs)</label>
-                                    <input type="number" 
-                                           id="weight" 
-                                           placeholder="e.g., 180"
-                                           min="50" 
-                                           max="500"
-                                           aria-describedby="weight-hint"
-                                           required>
-                                    <span id="weight-hint" class="visually-hidden">Enter your weight between 50 and 500 pounds</span>
+                                    <input type="number" id="weight" placeholder="e.g., 180" min="50" max="500">
                                 </div>
                                 <div class="form-group">
                                     <label for="height">Height (inches)</label>
-                                    <input type="number" 
-                                           id="height" 
-                                           placeholder="e.g., 68"
-                                           min="36" 
-                                           max="96"
-                                           aria-describedby="height-hint"
-                                           required>
-                                    <span id="height-hint" class="visually-hidden">Enter your height between 36 and 96 inches</span>
+                                    <input type="number" id="height" placeholder="e.g., 68" min="36" max="96">
                                 </div>
                                 <div class="form-group">
                                     <label for="age">Age</label>
-                                    <input type="number" 
-                                           id="age" 
-                                           placeholder="e.g., 35"
-                                           min="13" 
-                                           max="120"
-                                           aria-describedby="age-hint"
-                                           required>
-                                    <span id="age-hint" class="visually-hidden">Enter your age between 13 and 120 years</span>
+                                    <input type="number" id="age" placeholder="e.g., 35" min="13" max="120">
                                 </div>
                                 <div class="form-group">
                                     <label for="gender">Gender</label>
@@ -435,23 +364,21 @@
                                     </select>
                                 </div>
                             </div>
-                            <!-- Error message container -->
-                            <div id="calculator-error" class="error-message" role="alert" hidden></div>
-                            <button class="calculate-btn" id="calculateBtn" type="button">
-                                <i class="fa-solid fa-calculator" aria-hidden="true"></i> Calculate
+                            <button class="calculate-btn" id="calculateBtn">
+                                <i class="fa-solid fa-calculator"></i> Calculate
                             </button>
                         </div>
                     </div>
                 </li>
             </ul>
-        </section>
-    </main>
+        </div>
+    </div>
 
     <!-- Results Modal Overlay -->
-    <div class="results-container" id="resultsContainer" role="dialog" aria-labelledby="results-title" aria-modal="true" hidden>
+    <div class="results-container" id="resultsContainer">
         <div class="results-card">
             <div class="results-card-header">
-                <h3 id="results-title">Your Daily Targets</h3>
+                <h3>Your Daily Targets</h3>
             </div>
             <div class="results-card-body">
                 <div class="macro-stats">
@@ -477,7 +404,7 @@
     </div>
 
     <!-- Tooltip container (dynamically populated) -->
-    <div id="tooltip" class="tooltip" role="tooltip" aria-hidden="true"></div>
+    <div id="tooltip" class="tooltip" role="tooltip"></div>
 
     <script src="food_data.js"></script>
     <script src="script.js"></script>
@@ -495,8 +422,6 @@
                     // Create the overlay div
                     const overlay = document.createElement('div');
                     overlay.classList.add('fullscreen-overlay');
-                    overlay.setAttribute('role', 'dialog');
-                    overlay.setAttribute('aria-label', 'Enlarged image view');
 
                     // Create the image element to show inside the overlay
                     const fullscreenImage = document.createElement('img');
@@ -514,25 +439,14 @@
                         overlay.classList.add('active');
                     }, 10);
                     
-                    // Close overlay function
-                    const closeOverlay = () => {
+                    // Add event listener to close the overlay when it's clicked
+                    overlay.addEventListener('click', () => {
                         overlay.classList.remove('active');
+                        // Remove the overlay from the DOM after the closing animation finishes
                         setTimeout(() => {
                             document.body.removeChild(overlay);
-                        }, 300);
-                    };
-                    
-                    // Add event listener to close the overlay when clicked
-                    overlay.addEventListener('click', closeOverlay);
-                    
-                    // Close on Escape key
-                    const handleEscape = (e) => {
-                        if (e.key === 'Escape') {
-                            closeOverlay();
-                            document.removeEventListener('keydown', handleEscape);
-                        }
-                    };
-                    document.addEventListener('keydown', handleEscape);
+                        }, 300); // This duration should match the transition time in your CSS
+                    });
                 });
             });
         });
@@ -646,7 +560,6 @@
         function showTooltip(event, tooltip, content) {
             tooltip.innerHTML = content;
             tooltip.style.display = 'block';
-            tooltip.setAttribute('aria-hidden', 'false');
             
             // Position the tooltip
             positionTooltip(event.target, tooltip);
@@ -659,7 +572,6 @@
 
         function hideTooltip(tooltip) {
             tooltip.classList.remove('visible');
-            tooltip.setAttribute('aria-hidden', 'true');
             setTimeout(() => {
                 if (!tooltip.classList.contains('visible')) {
                     tooltip.style.display = 'none';
