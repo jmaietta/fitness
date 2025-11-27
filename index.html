@@ -37,11 +37,14 @@
     <link rel="manifest" href="site.webmanifest">
 </head>
 <body>
-    <div class="app-container">
-        
-        <img src="forge-logo.png" alt="Forge Logo" class="app-logo">
+    <!-- Header Bar -->
+    <header class="app-header">
+        <div class="header-content">
+            <img src="forge-logo.png" alt="Forge Fitness" class="app-logo">
+        </div>
+    </header>
 
-        <div id="quote-box" class="quote-box"></div>
+    <div class="app-container">
 
         <div class="tabs">
             <button class="tab-button active" data-target="stretching"><i class="fa-solid fa-child-reaching"></i> Stretching</button>
@@ -387,19 +390,19 @@
             </div>
             <div class="results-card-body">
                 <div class="macro-stats">
-                    <div class="stat">
+                    <div class="stat stat-calories">
                         <span class="stat-value" id="caloriesResult">0</span>
                         <span class="stat-label">Calories</span>
                     </div>
-                    <div class="stat">
+                    <div class="stat stat-protein">
                         <span class="stat-value" id="proteinResult">0g</span>
                         <span class="stat-label">Protein</span>
                     </div>
-                    <div class="stat">
+                    <div class="stat stat-carbs">
                         <span class="stat-value" id="carbsResult">0g</span>
                         <span class="stat-label">Carbs</span>
                     </div>
-                    <div class="stat">
+                    <div class="stat stat-fat">
                         <span class="stat-value" id="fatResult">0g</span>
                         <span class="stat-label">Fat</span>
                     </div>
