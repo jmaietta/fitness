@@ -165,6 +165,7 @@ function initExpandableItems() {
 /**
  * MODIFIED: Appends the nutrition guide content to the Nutrition tab,
  * after the calculator which is now hardcoded in index.html.
+ * Now uses explicit stat classes for consistent macro colors.
  */
 function initFoodTab() {
     const foodContainer = document.getElementById('nutrition');
@@ -182,10 +183,11 @@ function initFoodTab() {
     content += '<h3>General Dietary Heuristics</h3>';
     content += '<div class="heuristics-container">';
     const icons = ["fa-bullseye", "fa-bullseye", "fa-tint", "fa-utensils", "fa-balance-scale"];
+    const iconClasses = ["protein", "protein", "hydration", "meal", "meal"];
     generalHeuristics.forEach((heuristic, index) => {
         content += `
             <div class="heuristic-card">
-                <div class="heuristic-icon"><i class="fa-solid ${icons[index] || 'fa-star'}"></i></div>
+                <div class="heuristic-icon ${iconClasses[index] || ''}"><i class="fa-solid ${icons[index] || 'fa-star'}"></i></div>
                 <div class="heuristic-text">${heuristic}</div>
             </div>
         `;
@@ -205,9 +207,9 @@ function initFoodTab() {
                 <div class="details">
                     <p><strong>Portion:</strong> ${item.portion}</p>
                     <div class="macro-stats">
-                        <div class="stat"><span class="stat-value">${item.protein}</span><span class="stat-label">Protein</span></div>
-                        <div class="stat"><span class="stat-value">${item.fat}</span><span class="stat-label">Fat</span></div>
-                        <div class="stat"><span class="stat-value">${item.calories}</span><span class="stat-label">Calories</span></div>
+                        <div class="stat stat-protein"><span class="stat-value">${item.protein}</span><span class="stat-label">Protein</span></div>
+                        <div class="stat stat-fat"><span class="stat-value">${item.fat}</span><span class="stat-label">Fat</span></div>
+                        <div class="stat stat-calories"><span class="stat-value">${item.calories}</span><span class="stat-label">Calories</span></div>
                     </div>
                 </div>
             </li>
@@ -228,9 +230,9 @@ function initFoodTab() {
                 <div class="details">
                     <p><strong>Portion:</strong> ${item.portion}</p>
                      <div class="macro-stats">
-                        <div class="stat"><span class="stat-value">${item.carbs}</span><span class="stat-label">Carbs</span></div>
-                        <div class="stat"><span class="stat-value">${item.fat}</span><span class="stat-label">Fat</span></div>
-                        <div class="stat"><span class="stat-value">${item.calories}</span><span class="stat-label">Calories</span></div>
+                        <div class="stat stat-carbs"><span class="stat-value">${item.carbs}</span><span class="stat-label">Carbs</span></div>
+                        <div class="stat stat-fat"><span class="stat-value">${item.fat}</span><span class="stat-label">Fat</span></div>
+                        <div class="stat stat-calories"><span class="stat-value">${item.calories}</span><span class="stat-label">Calories</span></div>
                     </div>
                 </div>
             </li>
