@@ -1,4 +1,4 @@
-const CACHE_NAME = 'forge-fitness-cache-v5';
+const CACHE_NAME = 'forge-fitness-cache-v6';
 const urlsToCache = [
     // Core app files
     '/',
