@@ -1,0 +1,49 @@
+{
+  "packageId": "com.forgebodyfit.www.twa",
+  "host": "www.forgebodyfit.com",
+  "name": "Forge Fitness",
+  "launcherName": "Forge",
+  "display": "standalone",
+  "themeColor": "#1A1A1A",
+  "themeColorDark": "#1A1A1A",
+  "navigationColor": "#000000",
+  "navigationColorDark": "#000000",
+  "navigationDividerColor": "#00000000",
+  "navigationDividerColorDark": "#000000",
+  "backgroundColor": "#F0F2F5",
+  "enableNotifications": true,
+  "startUrl": "/",
+  "iconUrl": "https://www.forgebodyfit.com/android-chrome-512x512.png",
+  "maskableIconUrl": "https://www.forgebodyfit.com/android-chrome-512x512.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "./forge-upload-key.jks",
+    "alias": "forge-upload"
+  },
+  "appVersion": "1.0.1.0",
+  "appVersionCode": 2,
+  "shortcuts": [],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://www.forgebodyfit.com/site.webmanifest",
+  "fallbackType": "customtabs",
+  "features": {},
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "fullScopeUrl": "https://www.forgebodyfit.com/",
+  "minSdkVersion": 23,
+  "orientation": "portrait",
+  "fingerprints": [
+    {
+      "name": "Google Play app signing",
+      "value": "65:DC:33:1D:DF:13:C4:50:FD:6C:96:74:78:66:07:40:BD:EF:4A:4F:BA:31:90:9E:26:20:D7:82:7F:0A:4B:A0"
+    }
+  ],
+  "additionalTrustedOrigins": [],
+  "retainedBundles": [],
+  "launchHandlerClientMode": "navigate-existing",
+  "displayOverride": []
+}

@@ -98,7 +98,7 @@
     "related_applications": [
         {
             "platform": "play",
-            "id": "app.web.forgebodyfit.twa"
+            "id": "com.forgebodyfit.www.twa"
         }
     ]
 }

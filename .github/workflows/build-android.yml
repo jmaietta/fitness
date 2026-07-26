@@ -1,0 +1,61 @@
+name: Build Forge Fitness Android
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "android/**"
+      - ".github/workflows/build-android.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: gradle
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android API 36
+        run: sdkmanager "platforms;android-36" "build-tools;35.0.0"
+
+      - name: Restore upload keystore
+        env:
+          KEYSTORE_BASE64: ${{ secrets.FORGE_UPLOAD_KEYSTORE_BASE64 }}
+        run: printf '%s' "$KEYSTORE_BASE64" | base64 --decode > android/forge-upload-key.jks
+
+      - name: Build signed release bundle
+        working-directory: android
+        env:
+          FORGE_UPLOAD_KEYSTORE: ${{ github.workspace }}/android/forge-upload-key.jks
+          FORGE_UPLOAD_STORE_PASSWORD: ${{ secrets.FORGE_UPLOAD_STORE_PASSWORD }}
+          FORGE_UPLOAD_KEY_ALIAS: ${{ secrets.FORGE_UPLOAD_KEY_ALIAS }}
+          FORGE_UPLOAD_KEY_PASSWORD: ${{ secrets.FORGE_UPLOAD_KEY_PASSWORD }}
+        run: |
+          chmod +x gradlew
+          ./gradlew :app:bundleRelease --no-daemon
+
+      - name: Verify bundle signature
+        run: jarsigner -verify android/app/build/outputs/bundle/release/app-release.aab
+
+      - name: Upload signed bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: forge-fitness-api36-v2
+          path: android/app/build/outputs/bundle/release/app-release.aab
+          if-no-files-found: error
+          retention-days: 30
