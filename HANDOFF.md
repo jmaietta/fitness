@@ -1,10 +1,10 @@
 # Forge Fitness handoff
 
-Last updated: July 26, 2026
+Last updated: July 28, 2026
 
 This file is the recovery point for continuing the Forge Fitness Google Play update in a new
-session. Do not generate another Android upload key. The replacement key and signed bundle are
-already prepared.
+session. Do not generate another Android upload key or upload another bundle for version code `2`.
+The replacement key is active, and the API 36 production release has been submitted to Google.
 
 ## Repository and app identity
 
@@ -70,28 +70,35 @@ that password. The key material and password are stored as encrypted GitHub Acti
 The public reset certificate is committed at `android/upload_certificate.pem`. No private
 keystore or password is committed to Git.
 
-## Pending Google Play action
+## Google Play submission status
 
-An upload-key reset was requested successfully on July 26, 2026. Google confirmed that the new
-upload key becomes valid on:
+The upload-key reset requested on July 26, 2026 became active on July 28, 2026 at 2:28 PM UTC /
+10:28 AM EDT. Play Console displayed the new upload certificate, and the signed bundle was
+accepted successfully.
 
-**July 28, 2026 at 2:28 PM UTC / 10:28 AM EDT**
+- Production release version code: `2`
+- Production release version name: `1.0.1.0`
+- Target SDK confirmed by Play Console: `36`
+- Supported Android API levels: `23+`
+- Supported-device comparison: no previously supported devices were removed
+- Rollout: full production rollout
+- Managed publishing: off
+- Submitted for review: July 28, 2026 at approximately 12:05 PM EDT
+- Current state at handoff update: **Changes in review**, with Google Play quick checks running
 
-Do not cancel the pending reset. Google Play will reject a bundle signed with the new key before
-that activation time. The old upload certificate may remain visible until activation.
+Because managed publishing is off, Google Play will automatically publish version `2` after it
+passes quick checks and review. Do not select **Remove changes**.
 
-## Exact next steps after activation
+## Exact next steps
 
 1. Sign in to Play Console as the developer account owner, `jmaietta@ceorater.com`.
-2. Open Forge Fitness, then **Protected with Play > Play Store protection > Manage Play app
-   signing**.
-3. Confirm the upload-key SHA-256 is now the new `B5:81:...:ED:B9` fingerprint above.
-4. Go to **Test and release > Production** and create a new release.
-5. Upload `C:\Users\jmaie\Downloads\Forge-Fitness-API36-v2.aab`.
-6. Suggested release note: `Updated compatibility for Android 16 (API level 36).`
-7. Review the release, resolve any Play Console validation messages, and submit it for review and
-   production rollout.
-8. After Google processes the release, confirm the target API policy issue is cleared.
+2. Open Forge Fitness **Publishing overview** and monitor version `2` under **Changes in review**.
+3. Do not remove the change or create another release while this submission is being reviewed.
+4. If Google reports an error or rejection, capture the complete message before changing anything.
+5. After approval, confirm production shows version `2 (1.0.1.0)` as active.
+6. Confirm the Android 16 / API level 36 policy issue is cleared.
+7. Review any remaining recommendations separately; the three warnings displayed before this
+   upload were attached to the previous version `1` and were not blocking errors.
 
 The public reset certificate is also available locally at:
 
@@ -112,7 +119,7 @@ version code that has already been uploaded.
 ## Instructions for a new assistant session
 
 1. Read this file before changing or regenerating anything.
-2. Verify the current date and whether the upload-key reset is active.
-3. Do not create another keystore or request another reset.
-4. Continue with the pending Play Console upload using the prepared bundle.
-5. Update this handoff file after the release is submitted or if Play Console reports a blocker.
+2. Check the production submission status in Play Console.
+3. Do not create another keystore, request another reset, or re-upload version code `2`.
+4. If version `2` is approved, verify that it is active and the API 36 policy issue is cleared.
+5. Update this handoff file after approval or if Play Console reports a blocker.
